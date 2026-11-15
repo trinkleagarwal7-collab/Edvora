@@ -121,7 +121,7 @@ export const VisualNotesViewer: React.FC<VisualNotesViewerProps> = ({
             <button
               onClick={handlePrint}
               disabled={isLoading || !note}
-              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-purple-50 text-purple-700 hover:bg-purple-100 border border-purple-200 text-xs font-bold transition-colors shadow-2xs"
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-purple-50 text-purple-700 hover:bg-purple-100 border border-purple-200 text-xs font-bold transition-colors shadow-sm"
               title="Download or Print as PDF"
             >
               <Printer className="w-3.5 h-3.5" />
@@ -141,7 +141,7 @@ export const VisualNotesViewer: React.FC<VisualNotesViewerProps> = ({
           {isLoading ? (
             <div className="py-24 flex flex-col items-center justify-center text-center space-y-4">
               <div className="relative">
-                <div className="w-16 h-16 rounded-3xl bg-linear-to-tr from-purple-500 via-pink-400 to-amber-300 animate-spin flex items-center justify-center shadow-lg" />
+                <div className="w-16 h-16 rounded-3xl bg-gradient-to-tr from-purple-500 via-pink-400 to-amber-300 animate-spin flex items-center justify-center shadow-lg" />
                 <Sparkles className="w-7 h-7 text-white absolute inset-0 m-auto animate-pulse" />
               </div>
               <div className="space-y-1">

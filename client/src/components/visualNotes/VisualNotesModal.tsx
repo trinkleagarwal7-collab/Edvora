@@ -103,9 +103,9 @@ export const VisualNotesModal: React.FC<VisualNotesModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-charcoal-950/50 backdrop-blur-xs font-sans">
       <div className="w-full max-w-3xl bg-white rounded-3xl shadow-2xl border border-cream-300 overflow-hidden flex flex-col max-h-[90vh] animate-in fade-in zoom-in-95 duration-150">
         {/* Header */}
-        <div className="p-6 border-b border-cream-200 flex items-center justify-between bg-linear-to-r from-purple-50 via-pink-50 to-amber-50">
+        <div className="p-6 border-b border-cream-200 flex items-center justify-between bg-gradient-to-r from-purple-50 via-pink-50 to-amber-50">
           <div className="space-y-1">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-600 text-white text-[10px] font-black uppercase tracking-wider shadow-2xs">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-600 text-white text-[10px] font-black uppercase tracking-wider shadow-sm">
               <Sparkles className="w-3.5 h-3.5" />
               <span>One-Click Visual Notes</span>
             </div>
@@ -119,7 +119,7 @@ export const VisualNotesModal: React.FC<VisualNotesModalProps> = ({
 
           <button
             onClick={onClose}
-            className="p-2 rounded-2xl bg-white/80 hover:bg-white text-charcoal-400 hover:text-charcoal-800 transition-colors shadow-2xs"
+            className="p-2 rounded-2xl bg-white/80 hover:bg-white text-charcoal-400 hover:text-charcoal-800 transition-colors shadow-sm"
           >
             <X className="w-5 h-5" />
           </button>
@@ -144,7 +144,7 @@ export const VisualNotesModal: React.FC<VisualNotesModalProps> = ({
                   {/* Top Bar with Icon & Selection Indicator */}
                   <div className="flex items-start justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-11 h-11 rounded-2xl bg-white shadow-2xs border border-slate-100 flex items-center justify-center shrink-0">
+                      <div className="w-11 h-11 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center shrink-0">
                         {fmt.icon}
                       </div>
                       <div>
@@ -203,7 +203,7 @@ export const VisualNotesModal: React.FC<VisualNotesModalProps> = ({
           <button
             onClick={handleStartGeneration}
             disabled={isLoading}
-            className="px-6 py-3 rounded-2xl bg-linear-to-r from-purple-600 via-pink-600 to-purple-700 text-white text-xs font-black flex items-center gap-2 hover:opacity-95 transition-all shadow-md active:scale-98 disabled:opacity-50"
+            className="px-7 py-3.5 rounded-2xl bg-purple-600 hover:bg-purple-700 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700 text-white text-sm font-black flex items-center gap-2.5 transition-all shadow-lg hover:shadow-xl active:scale-98 disabled:opacity-50 cursor-pointer"
           >
             {isLoading ? (
               <>
@@ -212,7 +212,7 @@ export const VisualNotesModal: React.FC<VisualNotesModalProps> = ({
               </>
             ) : (
               <>
-                <Sparkles className="w-4 h-4" />
+                <Sparkles className="w-4 h-4 text-amber-200" />
                 <span>Generate Visual Notes</span>
                 <ArrowRight className="w-4 h-4" />
               </>

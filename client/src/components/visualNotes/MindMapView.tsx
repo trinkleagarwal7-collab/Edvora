@@ -83,7 +83,7 @@ export const MindMapView: React.FC<MindMapViewProps> = ({ data }) => {
         style={{ transform: `scale(${zoomLevel})` }}
       >
         {/* Central Root Concept Bubble */}
-        <div className="relative z-10 max-w-xl mx-auto my-6 p-6 rounded-3xl bg-linear-to-br from-purple-100 via-rose-50 to-amber-50 border-2 border-purple-300 shadow-xl text-center space-y-2">
+        <div className="relative z-10 max-w-xl mx-auto my-6 p-6 rounded-3xl bg-gradient-to-br from-purple-100 via-rose-50 to-amber-50 border-2 border-purple-300 shadow-xl text-center space-y-2">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-600 text-white text-[11px] font-extrabold shadow-xs">
             <Sparkles className="w-3.5 h-3.5" />
             <span>CORE CHAPTER THEME</span>
@@ -162,7 +162,7 @@ export const MindMapView: React.FC<MindMapViewProps> = ({ data }) => {
                       {branch.children.map((sub, sIdx) => (
                         <div
                           key={sub.id || sIdx}
-                          className="p-3 rounded-2xl bg-white border border-slate-200/90 shadow-2xs hover:border-purple-300 transition-colors space-y-1"
+                          className="p-3 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:border-purple-300 transition-colors space-y-1"
                         >
                           <div className="flex items-center justify-between">
                             <span className="text-xs font-bold text-navy-950 flex items-center gap-1.5">

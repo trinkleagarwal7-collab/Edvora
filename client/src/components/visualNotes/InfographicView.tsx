@@ -38,7 +38,7 @@ export const InfographicView: React.FC<InfographicViewProps> = ({ data }) => {
           {data.keyStats.map((stat, idx) => (
             <div
               key={idx}
-              className="p-4 rounded-2xl bg-linear-to-br from-cream-50 to-purple-50/40 border border-purple-200/80 text-center space-y-1 shadow-2xs hover:scale-102 transition-transform"
+              className="p-4 rounded-2xl bg-gradient-to-br from-purple-50 via-cream-50 to-pink-50/40 border border-purple-200/80 text-center space-y-1 shadow-sm hover:scale-102 transition-transform"
             >
               <span className="text-[10px] font-extrabold uppercase tracking-wider text-purple-800 block">
                 {stat.label}
@@ -83,7 +83,7 @@ export const InfographicView: React.FC<InfographicViewProps> = ({ data }) => {
                 {section.items.map((item, iIdx) => (
                   <div
                     key={iIdx}
-                    className="p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs space-y-2.5 hover:shadow-md transition-shadow"
+                    className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2.5 hover:shadow-md transition-shadow"
                   >
                     <div className="flex items-start justify-between gap-2">
                       <div className="flex items-center gap-2">
@@ -107,7 +107,7 @@ export const InfographicView: React.FC<InfographicViewProps> = ({ data }) => {
 
                     {/* Formula Callout Box if applicable */}
                     {item.formula && (
-                      <div className="p-3 rounded-xl bg-purple-50 border border-purple-200 text-purple-950 text-xs font-mono font-bold text-center shadow-2xs">
+                      <div className="p-3 rounded-xl bg-purple-50 border border-purple-200 text-purple-950 text-xs font-mono font-bold text-center shadow-sm">
                         📐 {item.formula}
                       </div>
                     )}

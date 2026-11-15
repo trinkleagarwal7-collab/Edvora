@@ -79,7 +79,7 @@ export const ProcessDiagramView: React.FC<ProcessDiagramViewProps> = ({ data }) 
 
                 {/* Conditional Decision Diamond if step is a decision point */}
                 {step.isDecisionPoint && (
-                  <div className="p-4 rounded-2xl bg-amber-100/70 border-2 border-amber-300 space-y-2.5 text-xs text-amber-950 shadow-2xs">
+                  <div className="p-4 rounded-2xl bg-amber-100/70 border-2 border-amber-300 space-y-2.5 text-xs text-amber-950 shadow-sm">
                     <div className="flex items-center gap-2 font-black text-amber-900">
                       <HelpCircle className="w-4 h-4 text-amber-700 shrink-0" />
                       <span>Decision Rule: {step.decisionQuestion}</span>

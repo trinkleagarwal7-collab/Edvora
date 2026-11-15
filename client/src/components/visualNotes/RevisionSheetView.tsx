@@ -31,10 +31,10 @@ const cardColors: Record<string, { bg: string; border: string; header: string; t
 
 export const RevisionSheetView: React.FC<RevisionSheetViewProps> = ({ data }) => {
   return (
-    <div className="w-full max-w-5xl mx-auto rounded-3xl bg-linear-to-b from-cream-50 via-white to-purple-50/20 p-6 md:p-10 border border-slate-200 shadow-xl space-y-8 font-sans">
+    <div className="w-full max-w-5xl mx-auto rounded-3xl bg-gradient-to-b from-cream-50 via-white to-purple-50/20 p-6 md:p-10 border border-slate-200 shadow-xl space-y-8 font-sans">
       {/* Aesthetic Digital Stationery Header */}
       <div className="text-center max-w-2xl mx-auto space-y-2 pb-6 border-b-2 border-dashed border-purple-200">
-        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-linear-to-r from-purple-100 to-pink-100 text-purple-900 text-xs font-black shadow-2xs">
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 text-purple-900 text-xs font-black shadow-sm">
           <Sparkles className="w-3.5 h-3.5 text-purple-600" />
           <span>AESTHETIC DIGITAL REVISION SHEET</span>
         </div>
@@ -77,14 +77,14 @@ export const RevisionSheetView: React.FC<RevisionSheetViewProps> = ({ data }) =>
 
               {/* Highlighted Formula Block */}
               {section.formula && (
-                <div className="p-3 rounded-2xl bg-white border border-purple-200 text-purple-950 text-xs font-mono font-bold text-center shadow-2xs">
+                <div className="p-3 rounded-2xl bg-white border border-purple-200 text-purple-950 text-xs font-mono font-bold text-center shadow-sm">
                   ✨ {section.formula}
                 </div>
               )}
 
               {/* Responsive Comparison Table */}
               {section.comparisonTable && (
-                <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-2xs">
+                <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
                   <table className="w-full text-left border-collapse text-xs">
                     <thead className="bg-slate-50 border-b border-slate-200 font-bold text-navy-950 text-[11px]">
                       <tr>
@@ -140,7 +140,7 @@ export const RevisionSheetView: React.FC<RevisionSheetViewProps> = ({ data }) =>
 
       {/* Formula Cheat Sheet & Quick Takeaways */}
       {data.keyFormulas && data.keyFormulas.length > 0 && (
-        <div className="p-6 rounded-3xl bg-linear-to-r from-purple-50 via-pink-50 to-amber-50 border-2 border-purple-200 space-y-4">
+        <div className="p-6 rounded-3xl bg-gradient-to-r from-purple-50 via-pink-50 to-amber-50 border-2 border-purple-200 space-y-4">
           <div className="flex items-center gap-2">
             <Bookmark className="w-4 h-4 text-purple-700" />
             <h3 className="text-sm font-black text-purple-950 uppercase tracking-wider">
@@ -149,7 +149,7 @@ export const RevisionSheetView: React.FC<RevisionSheetViewProps> = ({ data }) =>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {data.keyFormulas.map((f, fIdx) => (
-              <div key={fIdx} className="p-4 rounded-2xl bg-white border border-purple-200/80 shadow-2xs space-y-1.5">
+              <div key={fIdx} className="p-4 rounded-2xl bg-white border border-purple-200/80 shadow-sm space-y-1.5">
                 <div className="text-xs font-mono font-black text-purple-900 bg-purple-50 p-2 rounded-xl text-center">
                   {f.formula}
                 </div>

@@ -597,7 +597,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
 
                             <button
                               onClick={() => handleOpenVisualNotesModal(file)}
-                              className="px-3.5 py-2 rounded-xl bg-linear-to-r from-purple-600 via-pink-600 to-rose-500 hover:from-purple-700 hover:to-pink-700 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-2xs hover:shadow-md cursor-pointer"
+                              className="px-3.5 py-2 rounded-xl bg-purple-600 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-500 hover:from-purple-700 hover:to-pink-700 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm hover:shadow-md cursor-pointer"
                               title="Convert this presentation into visual notes (Mind Map, Infographic, Process, Revision Sheet)"
                             >
                               <Sparkles className="w-3.5 h-3.5 text-amber-200" />
@@ -803,7 +803,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
                     setPreviewFile(null);
                     handleOpenVisualNotesModal(f);
                   }}
-                  className="px-3 py-1.5 rounded-xl bg-linear-to-r from-purple-500 via-pink-500 to-rose-500 hover:from-purple-600 hover:to-pink-600 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-2xs"
+                  className="px-3 py-1.5 rounded-xl bg-purple-600 bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 hover:from-purple-600 hover:to-pink-600 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm"
                   title="Convert into Visual Notes"
                 >
                   <Sparkles className="w-3.5 h-3.5 text-amber-200" />
