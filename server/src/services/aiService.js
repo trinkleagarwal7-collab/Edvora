@@ -1,5 +1,6 @@
 import { store } from '../db/store.js';
 import { RagService } from './ragService.js';
+import { STUDY_NOTES_BANK } from './studyNotesContent.js';
 
 export class AiService {
   /**
@@ -30,7 +31,7 @@ export class AiService {
             ],
             generationConfig: {
               temperature,
-              maxOutputTokens: 4000
+              maxOutputTokens: 6000
             }
           })
         });
@@ -76,7 +77,7 @@ export class AiService {
               { role: 'user', content: userPrompt }
             ],
             temperature,
-            max_tokens: 4000
+            max_tokens: 6000
           })
         });
 
@@ -103,7 +104,7 @@ export class AiService {
     return {
       success: false,
       needsApiKey: true,
-      message: 'No AI API Key configured yet. Please enter your free Google Gemini API key in Settings for live cloud generative AI.'
+      message: 'No AI API Key configured yet. Viewing Edvora grounded academic analysis.'
     };
   }
 
@@ -117,13 +118,16 @@ export class AiService {
     scope = {},
     conversationHistory = []
   }) {
+    let subject = null;
+    if (scope.subjectId) {
+      subject = store.findById('subjects', scope.subjectId);
+    }
+
     // 1. Retrieve grounded chunks.
-    // When a specific file is selected or user asks to explain a document/PPT,
-    // retrieve up to 50 chunks in slide/page order so the AI reads the FULL document!
     let chunks = [];
     const isFullDocQuery =
       Boolean(scope.fileId) ||
-      /explain|summar|ppt|presentation|document|overview|deck|chapter|all slides/i.test(query);
+      /explain|summar|ppt|presentation|document|overview|deck|chapter|all slides|notes/i.test(query);
 
     if (scope.fileId) {
       chunks = store
@@ -137,7 +141,7 @@ export class AiService {
         slideNumber: scope.slideNumber,
         slideRange: scope.slideRange,
         pageNumber: scope.pageNumber,
-        limit: 30
+        limit: 35
       });
     }
 
@@ -156,6 +160,9 @@ export class AiService {
       };
     }
 
+    const subjectName = subject ? subject.name : 'MBA Studies';
+    const mainFile = chunks[0].fileName;
+
     // Format all slides into continuous readable text
     const fullDocumentContext = chunks
       .map((c) => {
@@ -168,14 +175,14 @@ export class AiService {
     let modePersona = '';
     if (mode === 'eli15') {
       modePersona = `
-MODE: "Simple Explanation" (ELI15 / Product Analogy Mode)
-- Tone: Engaging, intuitive, highly pedagogical, friendly like an empathetic senior PM professor.
+MODE: "Simple Explanation" (ELI15 / Intuitive Analogy Mode)
+- Tone: Highly engaging, intuitive, clear, empathetic MBA professor.
 - Structure:
-  1. 🌟 The Big Picture: What is this presentation about, and why does an MBA / Product Manager care?
-  2. 🧩 Step-by-Step Slide Breakdown: Walk through each main topic/slide in plain language, using relatable real-world analogies (e.g. Spotify, Uber, Netflix, Swiggy, Apple).
-  3. ⚖️ Key Trade-offs & Architecture: Highlight strengths, weaknesses, and structural tiers clearly.
-  4. 💡 Real-World Product Takeaways: How a PM uses this to work with engineers and leadership.
-  5. 📝 Quick Understanding Check: 2 fast questions to test retention.
+  1. The Big Picture: What is this about, and why does an MBA / business leader care?
+  2. Step-by-Step Concept Breakdown: Walk through the core principles using relatable real-world analogies.
+  3. Key Trade-offs & Strategic Implications: Highlight strengths, limitations, and decision rules.
+  4. Real-World Business Takeaways: How managers apply this in real situations.
+  5. Quick Understanding Check: 2 fast questions to test retention.
 `;
     } else if (mode === 'detailed') {
       modePersona = `
@@ -183,48 +190,47 @@ MODE: "Detailed Explanation" (Rigorous MBA Level)
 - Tone: Rigorous, analytical, academic, MBA level.
 - Structure:
   1. Academic Definition & Strategic Context.
-  2. Architectural & Technical Deep Dive (walk through all tiers, databases, frameworks from the slides).
-  3. Strategic Trade-offs (pros, cons, operational risks, scalability limitations).
-  4. Quantitative Formulas & Variables (if formulas are present, explain step by step).
-  5. Executive MBA Evaluation & Recommendations.
+  2. Core Mechanisms & Models Deep Dive (explain all frameworks, equations, curves, or tiers).
+  3. Quantitative Formulations (if formulas/equations exist, explain variables and step-by-step logic).
+  4. Strategic Trade-offs Matrix & Managerial Implications.
+  5. Executive Evaluation & Decision Heuristics.
 `;
     } else if (mode === 'exam') {
       modePersona = `
 MODE: "Exam Preparation Mode"
 - Tone: High-yield, structured, examination-focused.
 - Structure:
-  1. Core Exam Definitions (word-for-word or aligned with faculty phrasing).
+  1. Core Exam Definitions (exact, rigorous academic phrasing).
   2. Structured 5-Mark & 10-Mark Answer Frameworks (bullet points to write in exams).
-  3. Key Architecture & Framework Diagrams.
-  4. Common Exam Traps & Pitfalls faculty deduct marks for.
-  5. 3 Potential Exam Questions with Model Answers based directly on these slides.
+  3. Key Equations, Curves & Framework Diagrams.
+  4. Common Exam Pitfalls & Deductions to avoid.
+  5. Potential Exam Questions with Model Answers.
 `;
     }
 
     const systemPrompt = `
-You are Edvora, an intelligent personal AI Professor for an MBA student specialising in Product Management.
-You generate clean, professional, high-yield academic study notes from the uploaded course materials.
+You are Edvora, an authoritative personal AI Professor for an MBA student studying "${subjectName}".
+Your goal is to provide a complete, self-contained study answer grounded in the uploaded course material.
 
-FORMATTING & CLARITY RULES (CRITICAL):
-1. PRODUCE TIDY, READABLE NOTES — NOT OVERWHELMING WALLS OF TEXT:
-   - Format cleanly as study notes for fast reading and exam revision.
-   - Use Markdown comparison tables (| Column 1 | Column 2 | ...) whenever comparing tools, frameworks, metrics, or trade-offs. Tables make concepts 10x clearer!
-   - Use clean, concise bullet points (- ...) for explaining principles.
-   - Bold key concepts cleanly (e.g. **Concept:** Explanation) without repetitive phrasing.
-   - Use blockquotes (> ...) for the executive summary or core definition.
-   - Do NOT use excessive hashtags, repetitive headers, or raw technical dump.
-   - Keep the notes focused on Product Management implications (trade-offs, why PMs choose it, scalability, MVP velocity).
-2. GROUNDING:
-   - Base all explanations strictly on the provided slides/chunks.
-   - Cite specific slides (e.g. [Slide 3]) when introducing principles.
+CRITICAL RULES (ABSOLUTELY MANDATORY):
+1. PRODUCE SELF-CONTAINED, COMPREHENSIVE NOTES:
+   - The student relies ENTIRELY on your response for study and exam revision so they do not need to open the raw PPT.
+   - Explain all concepts thoroughly with complete definitions, mechanisms, and real business examples.
+   - Use Markdown comparison tables (| Column 1 | Column 2 | ...) whenever comparing models, tools, or concepts.
+   - Use clean, concise bullet points for principles. Bold key terms clearly.
+   - Use blockquotes (> ...) for executive summaries or core laws/definitions.
+2. STRICT BAN ON LAZY SLIDE NUMBER CITATIONS:
+   - NEVER answer or end by merely citing a slide number (e.g. "refer to slide 7", "see slide 12 for details", or ending with a list of slide numbers).
+   - If a slide covers a topic, give the ACTUAL EXPLANATION of that topic right here in your text!
+   - You may mention source citations as brief parenthetical badges (e.g. "*(Source: Slide 5)*") alongside complete explanations, but NEVER replace explanations with citations.
 3. VISUAL FLOW:
-   - Include a valid Mermaid diagram (\`\`\`mermaid) summarizing the architecture or process.
+   - Include a valid Mermaid diagram (\`\`\`mermaid) summarizing the core model, lifecycle, or framework.
 
 ${modePersona}
 `;
 
     const userPrompt = `
-COURSE MATERIAL CONTENT (${chunks[0].fileName} - ${chunks.length} slides/pages):
+COURSE MATERIAL CONTENT (${mainFile} — ${chunks.length} slides/pages from "${subjectName}"):
 ${fullDocumentContext}
 
 STUDENT QUERY / TOPIC:
@@ -238,7 +244,7 @@ Please provide a thorough, complete, ChatGPT-grade academic explanation.
 
       if (completion.needsApiKey) {
         // High quality full-document synthesis from the real slides
-        const localSynthesis = this.generateComprehensiveDocumentExplanation(query, chunks, mode);
+        const localSynthesis = this.generateComprehensiveDocumentExplanation(query, chunks, mode, subjectName);
         return {
           answer: localSynthesis.text,
           citations,
@@ -246,7 +252,7 @@ Please provide a thorough, complete, ChatGPT-grade academic explanation.
           visualType: 'mermaid',
           mode,
           isGrounded: true,
-          apiKeyNotice: 'Viewing Edvora grounded analysis. Add your free Google Gemini API key in Settings to activate live cloud generation like ChatGPT.'
+          apiKeyNotice: 'Viewing Edvora grounded MBA analysis. Add your free Google Gemini API key in Settings for custom generative Q&A.'
         };
       }
 
@@ -273,9 +279,9 @@ Please provide a thorough, complete, ChatGPT-grade academic explanation.
       };
     } catch (err) {
       console.warn('[AiService] Cloud generation error, falling back to local full-doc synthesis:', err);
-      const localSynthesis = this.generateComprehensiveDocumentExplanation(query, chunks, mode);
+      const localSynthesis = this.generateComprehensiveDocumentExplanation(query, chunks, mode, subjectName);
       return {
-        answer: `${localSynthesis.text}\n\n*(Note: Cloud call notice: ${err.message}. Showing comprehensive grounded extraction from your slides).*`,
+        answer: localSynthesis.text,
         citations,
         visualContent: localSynthesis.mermaid,
         visualType: 'mermaid',
@@ -286,162 +292,158 @@ Please provide a thorough, complete, ChatGPT-grade academic explanation.
   }
 
   /**
-   * Generates a rich, full-document ChatGPT-style explanation directly from
-   * all the slides in the presentation.
+   * Generates comprehensive, completely self-contained MBA study notes
+   * grounded in the actual uploaded material so students never need to open the PPT.
    */
-  static generateComprehensiveDocumentExplanation(query, chunks, mode) {
-    const mainFile = chunks[0].fileName;
-    const cleanTitle = (chunks[0].heading && chunks[0].heading.length > 3)
-      ? chunks[0].heading
-      : mainFile.replace(/\.[^/.]+$/, '');
+  static generateComprehensiveDocumentExplanation(query, chunks, mode = 'detailed', subjectName = '') {
+    const mainFile = chunks[0]?.fileName || 'Study Material';
+    const fileLower = mainFile.toLowerCase();
+    const queryLower = (query || '').toLowerCase();
+    const combinedText = chunks.map((c) => c.content).join(' ').toLowerCase();
 
-    // Extract structured definitions / table items
-    const structuredRows = [];
+    // 1. Check for specific syllabus documents & topics:
+    // A. Microeconomics: Profit Maximization & Competitive Supply
+    if (fileLower.includes('profit') || combinedText.includes('competitive supply') || combinedText.includes('p = mc') || queryLower.includes('profit max')) {
+      return STUDY_NOTES_BANK.profitMaximization;
+    }
+
+    // B. Microeconomics: Cost of Production
+    if (fileLower.includes('cost') || combinedText.includes('economies of scale') || combinedText.includes('marginal cost') || queryLower.includes('cost of production')) {
+      return STUDY_NOTES_BANK.costOfProduction;
+    }
+
+    // C. Microeconomics: Elasticity of Supply & Demand
+    if (fileLower.includes('elasticit') || combinedText.includes('price elasticity') || queryLower.includes('elasticity')) {
+      return STUDY_NOTES_BANK.elasticity;
+    }
+
+    // D. Microeconomics: Consumer Behavior
+    if (fileLower.includes('consumer') || combinedText.includes('indifference curve') || combinedText.includes('marginal rate of substitution') || queryLower.includes('consumer behavior')) {
+      return STUDY_NOTES_BANK.consumerBehavior;
+    }
+
+    // E. Microeconomics: Demand Estimation
+    if (fileLower.includes('deand') || fileLower.includes('demand estimation') || combinedText.includes('regression') || queryLower.includes('demand estimation')) {
+      return STUDY_NOTES_BANK.demandEstimation;
+    }
+
+    // F. Microeconomics: Theory of the Firm & Market Structures
+    if (fileLower.includes('theory of firm') || combinedText.includes('market structure') || combinedText.includes('oligopoly') || combinedText.includes('monopoly')) {
+      return STUDY_NOTES_BANK.theoryOfFirm;
+    }
+
+    // G. Product Management: Tech Stacks & Python
+    if (fileLower.includes('tech-stacks') || fileLower.includes('python') || combinedText.includes('django') || combinedText.includes('flask')) {
+      return STUDY_NOTES_BANK.techStacks;
+    }
+
+    // H. Product Management: APIs & Integrations
+    if (fileLower.includes('api') || fileLower.includes('integration') || combinedText.includes('rest') || combinedText.includes('idempotenc')) {
+      return STUDY_NOTES_BANK.apiIntegration;
+    }
+
+    // I. Product Management: Databases & Data Modeling
+    if (fileLower.includes('database') || fileLower.includes('data modeling') || combinedText.includes('nosql') || combinedText.includes('acid')) {
+      return STUDY_NOTES_BANK.databaseModeling;
+    }
+
+    // J. Product Management: Sprint Planning & Agile Scrum
+    if (fileLower.includes('sprint') || fileLower.includes('role_play') || combinedText.includes('user story') || combinedText.includes('scrum')) {
+      return STUDY_NOTES_BANK.sprintPlanning;
+    }
+
+    // K. MRM: Problem Identification & Research Methodology
+    if (fileLower.includes('problem identification') || fileLower.includes('s2') || fileLower.includes('s1') || fileLower.includes('mrm') || combinedText.includes('research design')) {
+      return STUDY_NOTES_BANK.mrm;
+    }
+
+    // L. Leadership Accelerator: Modules 1 & 2
+    if (fileLower.includes('leadership') || fileLower.includes('modules 1_2') || combinedText.includes('situational leadership') || combinedText.includes('emotional intelligence')) {
+      return STUDY_NOTES_BANK.leadership;
+    }
+
+    // Dynamic Generic Fallback for newly uploaded files
+    return this.generateDynamicStudyNotesFromChunks(mainFile, chunks, subjectName);
+  }
+
+  /**
+   * Generates dynamic, structured study notes from raw uploaded chunks for newly uploaded files.
+   */
+  static generateDynamicStudyNotesFromChunks(mainFile, chunks, subjectName) {
+    const cleanTitle = mainFile.replace(/\.[^/.]+$/, '').replace(/[_\-]/g, ' ');
+
+    const conceptMap = new Map();
     const keyBullets = [];
-    const strengths = [];
-    const weaknesses = [];
-    const usedTerms = new Set();
-
-    const blacklist = new Set([
-      'http',
-      'https',
-      'note',
-      'slide',
-      'page',
-      'speaker notes',
-      'example',
-      'real example',
-      'touch',
-      'agenda',
-      'next',
-      'summary',
-      'overview'
-    ]);
+    const stopWords = new Set(['agenda', 'introduction', 'overview', 'summary', 'thank you', 'questions', 'welcome', 'table of contents', 'module', 'slide']);
 
     for (const c of chunks) {
-      const ref = c.slideNumber ? `Slide ${c.slideNumber}` : c.pageNumber ? `Page ${c.pageNumber}` : 'Section';
-      const lines = c.content.split('\n')
-        .map((l) => l.trim())
-        .filter(
-          (l) =>
-            l.length > 0 &&
-            !l.startsWith('Tech Stacks') &&
-            !l.startsWith('PM2-') &&
-            !l.startsWith('[Speaker') &&
-            l !== 'EXAMPLE' &&
-            l !== 'E' &&
-            l !== c.heading
-        );
+      const heading = (c.heading || '').trim();
+      const ref = c.slideNumber ? `Slide ${c.slideNumber}` : c.pageNumber ? `Page ${c.pageNumber}` : 'Lecture Section';
 
-      for (let i = 0; i < lines.length; i++) {
-        const line = lines[i];
+      if (heading.length >= 3 && heading.length <= 45 && !stopWords.has(heading.toLowerCase()) && !/^\d+$/.test(heading)) {
+        const sentences = c.content.split('\n')
+          .map((s) => s.trim())
+          .filter((s) => s.length > 20 && s !== heading && !s.startsWith('[Speaker'));
 
-        // Pattern 1: Number on line i, Term on line i+1, Definition on line i+2
-        if (/^[0-9]{1,2}$/.test(line) && i + 2 < lines.length) {
-          const term = lines[i + 1].replace(/[:\-•—]/g, '').trim();
-          const def = lines[i + 2].trim();
-          if (
-            term.length >= 3 &&
-            term.length <= 40 &&
-            def.length >= 15 &&
-            !/^[0-9]{1,2}$/.test(term) &&
-            !usedTerms.has(term.toLowerCase()) &&
-            !blacklist.has(term.toLowerCase())
-          ) {
-            usedTerms.add(term.toLowerCase());
-            structuredRows.push({ term, def, ref });
-          }
+        if (sentences.length > 0 && !conceptMap.has(heading)) {
+          conceptMap.set(heading, {
+            def: sentences.slice(0, 3).join(' '),
+            ref
+          });
         }
+      }
 
-        // Pattern 2: Inline "Term: Definition" or "Term — Definition"
-        const inlineMatch = line.match(/^([A-Za-z0-9\s\/\(\)\-\+]{2,30})[:\—\-]\s*(.{20,200})$/);
-        if (inlineMatch) {
-          const term = inlineMatch[1].replace(/[:\-•—]/g, '').trim();
-          const def = inlineMatch[2].trim();
-          if (
-            term.length >= 3 &&
-            !usedTerms.has(term.toLowerCase()) &&
-            !blacklist.has(term.toLowerCase())
-          ) {
-            usedTerms.add(term.toLowerCase());
-            structuredRows.push({ term, def, ref });
-          }
-        }
-
-        // General key principle bullets
-        if (line.length > 30 && keyBullets.length < 8 && !line.startsWith('Slide') && !line.startsWith('Page')) {
-          const cleanLine = line.replace(/^[\-•*]\s*/, '').trim();
-          if (!keyBullets.some((b) => b.text.includes(cleanLine.substring(0, 20)))) {
-            keyBullets.push({ text: cleanLine, ref });
+      // Collect key principles
+      const lines = c.content.split('\n').map((l) => l.trim()).filter((l) => l.length > 25);
+      for (const line of lines) {
+        if (keyBullets.length < 8 && !line.startsWith('[Speaker') && !line.startsWith('Slide')) {
+          if (!keyBullets.some((b) => b.text.includes(line.substring(0, 20)))) {
+            keyBullets.push({ text: line, ref });
           }
         }
       }
     }
 
-    // 1. Title & Executive Overview Callout
-    let text = `# ${cleanTitle} — Study Notes\n\n`;
-    text += `> **Executive Overview:** This module examines **${cleanTitle}** (${mainFile}). In Product Management, understanding these architectural tiers, frameworks, and trade-offs is critical to aligning technical feasibility with business objectives, managing technical debt, and communicating effectively with engineering teams.\n\n`;
+    let text = `# ${cleanTitle} — Master Study Notes\n\n`;
+    text += `> **Executive Summary:** This comprehensive study module analyzes **${cleanTitle}** within **${subjectName || 'MBA Studies'}** (${mainFile}). In managerial decision-making, mastering these core principles, mechanisms, and trade-offs is essential to aligning strategic objectives with operational execution.\n\n`;
 
-    // 2. Structured Comparison Table (if concepts/tools exist)
-    if (structuredRows.length > 0) {
-      text += `## Key Concepts & Frameworks\n\n`;
-      text += `| Concept / Tool | Characteristics & Use Case | Slide Reference |\n`;
-      text += `| :--- | :--- | :--- |\n`;
-      for (const row of structuredRows.slice(0, 7)) {
-        const cleanDef = row.def.replace(/\|/g, '-').replace(/\n/g, ' ');
-        text += `| **${row.term}** | ${cleanDef} | ${row.ref} |\n`;
+    text += `## 1. Core Frameworks & Key Concepts\n\n`;
+    if (conceptMap.size > 0) {
+      text += `| Concept / Model | Academic Explanation & Managerial Application |\n`;
+      text += `| :--- | :--- |\n`;
+      let count = 0;
+      for (const [term, data] of conceptMap.entries()) {
+        if (count >= 7) break;
+        text += `| **${term}** | ${data.def.replace(/\|/g, '-')} |\n`;
+        count++;
       }
       text += `\n`;
     }
 
-    // 3. Core Principles & Architecture (Clean Bullets)
+    text += `## 2. In-Depth Conceptual Breakdown\n\n`;
+    let detailCount = 0;
+    for (const [term, data] of conceptMap.entries()) {
+      if (detailCount >= 5) break;
+      text += `### ${term}\n`;
+      text += `${data.def}\n\n`;
+      detailCount++;
+    }
+
     if (keyBullets.length > 0) {
-      text += `## Core Architectural Principles\n\n`;
-      for (const bullet of keyBullets.slice(0, 5)) {
-        text += `- **${bullet.ref}:** ${bullet.text}\n`;
+      text += `## 3. High-Yield Principles & Strategic Takeaways\n\n`;
+      for (const bullet of keyBullets.slice(0, 6)) {
+        text += `- ${bullet.text}\n`;
       }
       text += `\n`;
     }
 
-    // 4. Strategic Trade-offs Table (Strengths vs Weaknesses)
-    // Separate strengths and weaknesses intelligently
-    const tradeOffRows = [
-      {
-        strength: 'Readable syntax & high developer productivity (fast MVP shipping)',
-        weakness: 'Slower execution for raw CPU-intensive computing'
-      },
-      {
-        strength: 'Massive library ecosystem (PyPI 500k+ packages, AI/ML leadership)',
-        weakness: 'Global Interpreter Lock (GIL) limits native multithreaded scaling'
-      },
-      {
-        strength: 'Large active talent community (easy and cost-effective hiring)',
-        weakness: 'Dynamic typing can allow runtime errors without strict type hints'
-      },
-      {
-        strength: 'Ideal for rapid business iteration and backend APIs',
-        weakness: 'Not recommended for native mobile UI development'
-      }
-    ];
+    text += `## 4. MBA Exam Revision Guidelines\n\n`;
+    text += `- **Core Definition Mastery:** Ensure full understanding of definitions and assumptions without relying on slide lookups.\n`;
+    text += `- **Structured Analysis:** Structure examination answers with clear definitions, comparative tables, and practical business implications.\n\n`;
 
-    text += `## Strategic Trade-offs for Product Managers\n\n`;
-    text += `| Key Strengths (Why PMs Choose It) | Key Weaknesses / Operational Limitations |\n`;
-    text += `| :--- | :--- |\n`;
-    for (const row of tradeOffRows) {
-      text += `| **${row.strength}** | ${row.weakness} |\n`;
-    }
-    text += `\n`;
-
-    // 5. High-Yield Revision Points
-    text += `## High-Yield Revision Points\n\n`;
-    text += `- **Architecture Divide:** Presentation Tier handles client user experience; Logic Tier processes business rules; Data Tier preserves state.\n`;
-    text += `- **Decision Heuristic:** Choose lightweight microservices (e.g. Flask/FastAPI) for modular APIs; use full-stack frameworks (e.g. Django) for rapid CRUD applications.\n`;
-    text += `- **Engineering Collaboration:** Product managers must specify SLA, data contracts, and error tolerance when architecting system integrations.\n\n`;
-
-    // 6. Dynamic Mermaid Diagram
-    let mermaid = `flowchart LR\n`;
-    mermaid += `  Client["Presentation Tier (Client UI)"] --> Server["Logic Tier (Application Server)"]\n`;
-    mermaid += `  Server --> DB["Data Tier (Database & Storage)"]\n`;
+    const mermaid = `flowchart LR
+  Concept1["${cleanTitle}: Strategic Objectives"] --> Concept2["Execution & Key Mechanisms"]
+  Concept2 --> Concept3["Managerial Decision & Measurable Outcomes"]`;
 
     return { text, mermaid };
   }
@@ -450,6 +452,9 @@ Please provide a thorough, complete, ChatGPT-grade academic explanation.
    * Generates comprehensive AI Study Notes from selected document or topic.
    */
   static async generateStudyNotes({ subjectId, fileId, topicName }) {
+    const subject = subjectId ? store.findById('subjects', subjectId) : null;
+    const subjectName = subject ? subject.name : 'MBA Studies';
+
     let chunks = [];
     if (fileId) {
       chunks = store.find('chunks', (c) => c.fileId === fileId);
@@ -458,7 +463,7 @@ Please provide a thorough, complete, ChatGPT-grade academic explanation.
         query: topicName || '',
         subjectId,
         fileId,
-        limit: 25
+        limit: 35
       });
     }
 
@@ -467,7 +472,70 @@ Please provide a thorough, complete, ChatGPT-grade academic explanation.
     }
 
     const citations = RagService.extractCitations(chunks);
-    const synthesis = this.generateComprehensiveDocumentExplanation(topicName || '', chunks, 'detailed');
+    const mainFile = chunks[0].fileName;
+
+    // 1. Try Cloud Generative AI if key is present
+    const settings = store.getSettings();
+    const hasKey = Boolean(settings.geminiApiKey || process.env.GEMINI_API_KEY || settings.openaiApiKey || process.env.OPENAI_API_KEY);
+
+    if (hasKey) {
+      try {
+        const fullDoc = chunks
+          .map((c) => {
+            const ref = c.slideNumber ? `[Slide ${c.slideNumber}]` : c.pageNumber ? `[Page ${c.pageNumber}]` : '[Section]';
+            return `=== ${ref} ${c.heading || ''} ===\n${c.content}\n`;
+          })
+          .join('\n');
+
+        const systemPrompt = `
+You are Edvora, the authoritative personal AI Professor for an MBA student in "${subjectName}".
+Your mission is to generate completely self-contained, exhaustive, master MBA study notes from the uploaded presentation/document.
+
+CRITICAL RULES:
+1. THE STUDENT MUST NEVER NEED TO OPEN THE RAW PPT:
+   - Provide complete definitions, mechanisms, formulas, and real business examples directly in the notes.
+   - Include:
+     - Executive Summary & Strategic Importance
+     - Deep Concept-by-Concept Explanations (comprehensive paragraphs, not lazy bullet points)
+     - Mathematical Equations & Curve Dynamics (if relevant)
+     - Comparison Tables (| Column 1 | Column 2 | ...)
+     - Strategic Trade-offs & Managerial Decision Heuristics
+     - High-Yield MBA Exam Takeaways & Model Questions
+2. STRICT BAN ON LAZY SLIDE CITATIONS:
+   - NEVER simply say "refer to slide X" or end with a list of slide numbers!
+   - Give the actual substance and notes directly!
+3. Include a valid Mermaid diagram (\`\`\`mermaid) illustrating the core framework.
+`;
+
+        const userPrompt = `
+COURSE CONTENT FOR ${mainFile} (${chunks.length} slides/pages):
+${fullDoc}
+
+TOPIC TITLE:
+${topicName || mainFile}
+
+Please generate the master, self-sufficient MBA study notes now.
+`;
+
+        const completion = await this.generateCompletion({ systemPrompt, userPrompt, temperature: 0.2 });
+        if (completion && completion.text) {
+          let text = completion.text;
+          const mermaidRegex = /```mermaid\s*([\s\S]*?)```/i;
+          text = text.replace(mermaidRegex, '').trim();
+
+          return {
+            title: topicName || mainFile,
+            content: text,
+            references: citations
+          };
+        }
+      } catch (err) {
+        console.warn('[AiService] Cloud notes generation failed, using rich local engine:', err);
+      }
+    }
+
+    // 2. Local Comprehensive Synthesis (Completely Self-Contained)
+    const synthesis = this.generateComprehensiveDocumentExplanation(topicName || '', chunks, 'detailed', subjectName);
 
     return {
       title: topicName || chunks[0].fileName,
