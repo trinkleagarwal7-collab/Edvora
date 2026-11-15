@@ -21,7 +21,9 @@ import {
   BookmarkCheck
 } from 'lucide-react';
 import { api } from '../../api';
-import { Subject, CourseFile, Topic, Chunk } from '../../types';
+import { Subject, CourseFile, Topic, Chunk, VisualFormat, VisualNote } from '../../types';
+import { VisualNotesModal } from '../../components/visualNotes/VisualNotesModal';
+import { VisualNotesViewer } from '../../components/visualNotes/VisualNotesViewer';
 
 interface CoursesPageProps {
   initialSubjectId?: string | null;
@@ -51,6 +53,13 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
   const [newSubjectDesc, setNewSubjectDesc] = useState('');
   const [newTopicName, setNewTopicName] = useState('');
   const [previewFile, setPreviewFile] = useState<{ file: CourseFile; chunks: Chunk[] } | null>(null);
+
+  // Visual Notes State
+  const [selectedVisualFile, setSelectedVisualFile] = useState<CourseFile | null>(null);
+  const [isVisualModalOpen, setIsVisualModalOpen] = useState(false);
+  const [isVisualViewerOpen, setIsVisualViewerOpen] = useState(false);
+  const [activeVisualNote, setActiveVisualNote] = useState<VisualNote | null>(null);
+  const [isGeneratingVisual, setIsGeneratingVisual] = useState(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -190,6 +199,47 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
       setPreviewFile(data);
     } catch (err: any) {
       alert(`Failed to preview file: ${err.message}`);
+    }
+  };
+
+  const handleOpenVisualNotesModal = (file: CourseFile) => {
+    setSelectedVisualFile(file);
+    setIsVisualModalOpen(true);
+  };
+
+  const handleGenerateVisualNotes = async (format: VisualFormat) => {
+    if (!selectedVisualFile) return;
+    setIsVisualModalOpen(false);
+    setIsGeneratingVisual(true);
+    setIsVisualViewerOpen(true);
+    try {
+      const note = await api.generateVisualNotes({
+        fileId: selectedVisualFile.id,
+        format
+      });
+      setActiveVisualNote(note);
+    } catch (err: any) {
+      alert(`Visual notes generation failed: ${err.message || 'Please retry'}`);
+      setIsVisualViewerOpen(false);
+    } finally {
+      setIsGeneratingVisual(false);
+    }
+  };
+
+  const handleChangeVisualFormat = async (format: VisualFormat) => {
+    const fileId = selectedVisualFile?.id || activeVisualNote?.fileId;
+    if (!fileId) return;
+    setIsGeneratingVisual(true);
+    try {
+      const note = await api.generateVisualNotes({
+        fileId,
+        format
+      });
+      setActiveVisualNote(note);
+    } catch (err: any) {
+      alert(`Failed to switch format: ${err.message || 'Please retry'}`);
+    } finally {
+      setIsGeneratingVisual(false);
     }
   };
 
@@ -546,6 +596,15 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
                             </button>
 
                             <button
+                              onClick={() => handleOpenVisualNotesModal(file)}
+                              className="px-3.5 py-2 rounded-xl bg-linear-to-r from-purple-600 via-pink-600 to-rose-500 hover:from-purple-700 hover:to-pink-700 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-2xs hover:shadow-md cursor-pointer"
+                              title="Convert this presentation into visual notes (Mind Map, Infographic, Process, Revision Sheet)"
+                            >
+                              <Sparkles className="w-3.5 h-3.5 text-amber-200" />
+                              <span>✨ Visual Notes</span>
+                            </button>
+
+                            <button
                               onClick={() =>
                                 onNavigateToStudyRoom({
                                   subjectId: activeSubject.id,
@@ -737,9 +796,23 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
                   {previewFile.chunks.length} extracted slide & page chunks
                 </p>
               </div>
-              <button onClick={() => setPreviewFile(null)}>
-                <X className="w-4 h-4 text-charcoal-400 hover:text-white" />
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => {
+                    const f = previewFile.file;
+                    setPreviewFile(null);
+                    handleOpenVisualNotesModal(f);
+                  }}
+                  className="px-3 py-1.5 rounded-xl bg-linear-to-r from-purple-500 via-pink-500 to-rose-500 hover:from-purple-600 hover:to-pink-600 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-2xs"
+                  title="Convert into Visual Notes"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-amber-200" />
+                  <span>Convert into Visual Notes</span>
+                </button>
+                <button onClick={() => setPreviewFile(null)} className="p-1.5 rounded-lg hover:bg-charcoal-800 transition-colors">
+                  <X className="w-4 h-4 text-charcoal-400 hover:text-white" />
+                </button>
+              </div>
             </div>
             <div className="overflow-y-auto p-5 space-y-3 flex-1 bg-cream-50">
               {previewFile.chunks.map((chunk, idx) => (
@@ -756,6 +829,26 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
           </div>
         </div>
       )}
+
+      {/* Modal: Visual Format Selection */}
+      {selectedVisualFile && (
+        <VisualNotesModal
+          file={selectedVisualFile}
+          isOpen={isVisualModalOpen}
+          onClose={() => setIsVisualModalOpen(false)}
+          onGenerate={handleGenerateVisualNotes}
+          isLoading={isGeneratingVisual}
+        />
+      )}
+
+      {/* Modal: Visual Notes Interactive Viewer */}
+      <VisualNotesViewer
+        isOpen={isVisualViewerOpen}
+        onClose={() => setIsVisualViewerOpen(false)}
+        note={activeVisualNote}
+        isLoading={isGeneratingVisual}
+        onChangeFormat={handleChangeVisualFormat}
+      />
     </div>
   );
 };

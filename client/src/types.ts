@@ -354,3 +354,102 @@ export interface EscapeRoomLobbyInfo {
   recentAttempts: EscapeRoomResult[];
 }
 
+// ==========================================
+// ✨ ONE-CLICK VISUAL NOTES TYPES
+// ==========================================
+
+export type VisualFormat = 'mindmap' | 'infographic' | 'process' | 'revisionsheet';
+
+export interface MindMapNode {
+  id: string;
+  label: string;
+  description?: string;
+  icon?: string;
+  color?: string; // pastel color e.g. 'lavender' | 'pink' | 'mint' | 'yellow' | 'blue' | 'peach' | 'lilac'
+  badge?: string;
+  slideReference?: string;
+  children?: MindMapNode[];
+}
+
+export interface InfographicItem {
+  title: string;
+  text: string;
+  stat?: string;
+  formula?: string;
+  example?: string;
+  icon?: string;
+  badge?: string;
+  slideReference?: string;
+}
+
+export interface InfographicSection {
+  id: string;
+  title: string;
+  tagline?: string;
+  color: string;
+  items: InfographicItem[];
+}
+
+export interface ProcessStep {
+  stepNumber: number;
+  title: string;
+  description: string;
+  stageColor: string;
+  isDecisionPoint?: boolean;
+  decisionQuestion?: string;
+  yesBranch?: string;
+  noBranch?: string;
+  keyTakeaway: string;
+  slideReference?: string;
+}
+
+export interface RevisionSection {
+  id: string;
+  category: 'definition' | 'formula' | 'comparison' | 'framework' | 'takeaway';
+  title: string;
+  color: string;
+  content: string;
+  formula?: string;
+  comparisonTable?: {
+    headers: string[];
+    rows: string[][];
+  };
+  memoryCue?: string;
+  examTip?: string;
+  slideReference?: string;
+}
+
+export interface VisualNote {
+  id: string;
+  fileId: string;
+  fileName: string;
+  subjectId: string;
+  subjectName: string;
+  format: VisualFormat;
+  title: string;
+  subtitle: string;
+  summary: string;
+  slideCount: number;
+  coveragePercentage: number;
+  verifiedSlides: number[];
+  mindMapData?: {
+    root: MindMapNode;
+  };
+  infographicData?: {
+    sections: InfographicSection[];
+    keyStats: { label: string; value: string; icon?: string }[];
+  };
+  processData?: {
+    title: string;
+    description: string;
+    steps: ProcessStep[];
+  };
+  revisionSheetData?: {
+    sections: RevisionSection[];
+    keyFormulas: { formula: string; explanation: string; whenToUse: string }[];
+    examCheatSheet: string[];
+  };
+  createdAt: string;
+}
+
+

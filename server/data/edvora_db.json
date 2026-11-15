@@ -13571,5 +13571,1962 @@
       ],
       "completedAt": "2026-11-15T06:00:54.920Z"
     }
+  ],
+  "visual_notes": [
+    {
+      "id": "vn_7493b796-a978-4f59-83bd-8808abdd18e3",
+      "fileId": "file_6b3c413b-43c5-4a8a-9f45-4f6590669bab",
+      "fileName": "Profit maximization and competitive supply.pptx",
+      "subjectId": "subj_cd8f99c7-4d7b-494b-9a54-026e4c9edc81",
+      "subjectName": "Microeconomics",
+      "format": "mindmap",
+      "title": "Profit maximization and competitive supply",
+      "subtitle": "Microeconomics & Firm Output Decision Tree",
+      "summary": "Complete mind map of profit maximization (MR=MC), short-run shutdown rule, break-even conditions, and competitive supply curves.",
+      "slideCount": 63,
+      "coveragePercentage": 100,
+      "verifiedSlides": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "mindMapData": {
+        "root": {
+          "id": "root",
+          "label": "Profit Maximization & Competitive Supply",
+          "description": "Optimal output choice for price-taking competitive firms to maximize economic profit (TR - TC).",
+          "icon": "TrendingUp",
+          "color": "lavender",
+          "slideReference": "Slides 1-51",
+          "children": [
+            {
+              "id": "b1",
+              "label": "Universal Profit Maximization Rule",
+              "description": "First order condition MR = MC with rising MC curve. Price-takers face horizontal demand P = AR = MR.",
+              "icon": "Target",
+              "color": "mint",
+              "badge": "Core Law",
+              "slideReference": "Slides 7-10",
+              "children": [
+                {
+                  "id": "b1_1",
+                  "label": "First-Order Condition",
+                  "description": "d(Profit)/dq = MR - MC = 0 ==> MR = MC",
+                  "color": "mint",
+                  "slideReference": "Slide 8"
+                },
+                {
+                  "id": "b1_2",
+                  "label": "Competitive Firm Identity",
+                  "description": "Price taker ==> P = AR = MR ==> Condition becomes P = MC",
+                  "color": "mint",
+                  "slideReference": "Slide 9"
+                },
+                {
+                  "id": "b1_3",
+                  "label": "Second-Order Condition",
+                  "description": "MC curve must be rising (d2(Profit)/dq2 < 0) for true maximum",
+                  "color": "mint",
+                  "slideReference": "Slide 10"
+                }
+              ]
+            },
+            {
+              "id": "b2",
+              "label": "Short-Run Production Decisions",
+              "description": "Fixed costs (TFC) are sunk in the short run. Production viability is governed strictly by AVC.",
+              "icon": "AlertCircle",
+              "color": "pink",
+              "badge": "Crucial Rules",
+              "slideReference": "Slides 19-25",
+              "children": [
+                {
+                  "id": "b2_1",
+                  "label": "Supernormal Profit (P > ATC)",
+                  "description": "Firm earns positive economic profit (P - ATC) * Q",
+                  "color": "pink",
+                  "slideReference": "Slide 20"
+                },
+                {
+                  "id": "b2_2",
+                  "label": "Loss-Minimizing (AVC <= P < ATC)",
+                  "description": "Operate in short run! Revenue covers variable costs and partially pays TFC.",
+                  "color": "pink",
+                  "slideReference": "Slide 21"
+                },
+                {
+                  "id": "b2_3",
+                  "label": "Shutdown Rule (P < AVC)",
+                  "description": "Shut down immediately! Producing causes losses greater than fixed overhead.",
+                  "color": "pink",
+                  "slideReference": "Slide 22"
+                }
+              ]
+            },
+            {
+              "id": "b3",
+              "label": "Firm & Market Supply Curve",
+              "description": "Relationship between market price and quantity supplied.",
+              "icon": "Activity",
+              "color": "yellow",
+              "badge": "Supply Dynamics",
+              "slideReference": "Slides 26-30",
+              "children": [
+                {
+                  "id": "b3_1",
+                  "label": "Firm Supply Curve",
+                  "description": "The portion of Marginal Cost (MC) above minimum AVC",
+                  "color": "yellow",
+                  "slideReference": "Slide 26"
+                },
+                {
+                  "id": "b3_2",
+                  "label": "Market Supply Curve",
+                  "description": "Horizontal summation of individual firm supply curves",
+                  "color": "yellow",
+                  "slideReference": "Slide 27"
+                },
+                {
+                  "id": "b3_3",
+                  "label": "Break-Even Price",
+                  "description": "P = min ATC, where firm earns normal zero economic profit",
+                  "color": "yellow",
+                  "slideReference": "Slide 28"
+                }
+              ]
+            },
+            {
+              "id": "b4",
+              "label": "Long-Run Equilibrium & Welfare",
+              "description": "Free entry and exit drive market price to minimum efficient scale.",
+              "icon": "Award",
+              "color": "blue",
+              "badge": "Long-Run",
+              "slideReference": "Slides 31-45",
+              "children": [
+                {
+                  "id": "b4_1",
+                  "label": "Zero Economic Profit",
+                  "description": "P = MC = min ATC in long-run equilibrium",
+                  "color": "blue",
+                  "slideReference": "Slide 32"
+                },
+                {
+                  "id": "b4_2",
+                  "label": "Producer Surplus",
+                  "description": "PS = TR - TVC = Profit + TFC. Exceeds profit by fixed costs.",
+                  "color": "blue",
+                  "slideReference": "Slide 35"
+                },
+                {
+                  "id": "b4_3",
+                  "label": "Allocative Efficiency",
+                  "description": "P = MC means consumer valuation equals marginal production cost",
+                  "color": "blue",
+                  "slideReference": "Slide 40"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "createdAt": "2026-11-15T09:25:41.779Z"
+    },
+    {
+      "id": "vn_1b26be1d-a101-4316-b758-0607c37839b7",
+      "fileId": "file_6b3c413b-43c5-4a8a-9f45-4f6590669bab",
+      "fileName": "Profit maximization and competitive supply.pptx",
+      "subjectId": "subj_cd8f99c7-4d7b-494b-9a54-026e4c9edc81",
+      "subjectName": "Microeconomics",
+      "format": "infographic",
+      "title": "Profit maximization and competitive supply",
+      "subtitle": "Educational Infographic: The Mechanics of Competitive Output",
+      "summary": "Visual breakdown of profit maximization, shutdown thresholds, and market structure differences.",
+      "slideCount": 63,
+      "coveragePercentage": 100,
+      "verifiedSlides": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "infographicData": {
+        "keyStats": [
+          {
+            "label": "Universal Profit Rule",
+            "value": "MR = MC",
+            "icon": "Target"
+          },
+          {
+            "label": "Competitive Identity",
+            "value": "P = MC",
+            "icon": "Zap"
+          },
+          {
+            "label": "Shutdown Threshold",
+            "value": "P < min AVC",
+            "icon": "AlertTriangle"
+          },
+          {
+            "label": "Long-Run Profit",
+            "value": "Zero Economic",
+            "icon": "CheckCircle2"
+          }
+        ],
+        "sections": [
+          {
+            "id": "sec_1",
+            "title": "1. The Golden Rule of Profit Maximization",
+            "tagline": "How competitive firms optimize their production volume",
+            "color": "mint",
+            "items": [
+              {
+                "title": "Price-Taking Demand",
+                "text": "Because each competitive firm is small relative to the market, individual demand is perfectly elastic (horizontal) at market price.",
+                "formula": "P = AR = MR",
+                "icon": "ArrowRight",
+                "badge": "Assumption",
+                "slideReference": "Slide 7"
+              },
+              {
+                "title": "Profit Optimization",
+                "text": "To maximize profit, set output where price equals marginal cost. If MR > MC, increase output; if MR < MC, cut output.",
+                "formula": "P = MC (rising)",
+                "stat": "Max Profit",
+                "icon": "Check",
+                "badge": "Core Formula",
+                "slideReference": "Slide 8"
+              }
+            ]
+          },
+          {
+            "id": "sec_2",
+            "title": "2. The Short-Run Shutdown Decision Guide",
+            "tagline": "Why loss-making firms often keep their doors open",
+            "color": "yellow",
+            "items": [
+              {
+                "title": "Fixed Costs are Sunk",
+                "text": "In the short run, fixed expenses (rent, factory leases) must be paid even at zero output. They are ignored when deciding whether to shut down.",
+                "stat": "Sunk Costs",
+                "icon": "FileText",
+                "badge": "Managerial Rule",
+                "slideReference": "Slide 19"
+              },
+              {
+                "title": "The Operating Zone (AVC <= P < ATC)",
+                "text": "Revenue covers 100% of variable operating costs and contributes toward paying fixed overhead. Losses are smaller than shutting down!",
+                "formula": "Loss < TFC",
+                "icon": "TrendingDown",
+                "badge": "Loss Minimizing",
+                "slideReference": "Slide 21"
+              },
+              {
+                "title": "The Shutdown Boundary (P < AVC)",
+                "text": "Revenue fails to cover hourly wages and materials. Continuing to run accelerates losses beyond fixed costs.",
+                "formula": "P < AVC ==> Q = 0",
+                "stat": "SHUT DOWN",
+                "icon": "AlertOctagon",
+                "badge": "Critical Rule",
+                "slideReference": "Slide 22"
+              }
+            ]
+          },
+          {
+            "id": "sec_3",
+            "title": "3. Long-Run Equilibrium Dynamics",
+            "tagline": "How free entry and exit eliminate economic rents",
+            "color": "lavender",
+            "items": [
+              {
+                "title": "Free Entry & Exit Mechanism",
+                "text": "Positive profits attract outside firms, shifting market supply right and lowering price until economic profits drop to zero.",
+                "stat": "Zero Profit",
+                "icon": "RefreshCw",
+                "badge": "Market Force",
+                "slideReference": "Slide 31"
+              },
+              {
+                "title": "Triple Equality Condition",
+                "text": "In long-run competitive equilibrium, every surviving firm operates at the minimum of its Average Total Cost curve.",
+                "formula": "P = MC = min ATC",
+                "icon": "Award",
+                "badge": "Equilibrium",
+                "slideReference": "Slide 33"
+              }
+            ]
+          }
+        ]
+      },
+      "createdAt": "2026-11-15T09:25:49.385Z"
+    },
+    {
+      "id": "vn_61e3fcd1-284c-4bff-b583-ec26eda87ccb",
+      "fileId": "file_6b3c413b-43c5-4a8a-9f45-4f6590669bab",
+      "fileName": "Profit maximization and competitive supply.pptx",
+      "subjectId": "subj_cd8f99c7-4d7b-494b-9a54-026e4c9edc81",
+      "subjectName": "Microeconomics",
+      "format": "process",
+      "title": "Competitive Firm Output & Shutdown Decision Pipeline",
+      "subtitle": "Sequential managerial workflow to determine production volume and operating status",
+      "summary": "5-stage visual process guide from price observation to long-run industry equilibrium.",
+      "slideCount": 63,
+      "coveragePercentage": 100,
+      "verifiedSlides": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "processData": {
+        "title": "Competitive Output Decision Workflow",
+        "description": "Step-by-step decision framework for executive pricing and production choices.",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "title": "Observe Market Price (P)",
+            "description": "In perfect competition, the firm is an individual price taker. Market-wide supply and demand set equilibrium price P.",
+            "stageColor": "blue",
+            "keyTakeaway": "Individual firm faces horizontal demand where P = AR = MR.",
+            "slideReference": "Slide 5"
+          },
+          {
+            "stepNumber": 2,
+            "title": "Calculate Optimal Production Level (P = MC)",
+            "description": "Equate market price to Marginal Cost (MC = ΔTC / ΔQ) on the upward-sloping portion of the MC curve to locate target output q*.",
+            "stageColor": "lavender",
+            "keyTakeaway": "Produces where marginal revenue generated by last unit equals its marginal production cost.",
+            "slideReference": "Slide 8"
+          },
+          {
+            "stepNumber": 3,
+            "title": "Check Short-Run Shutdown Boundary",
+            "description": "Evaluate whether market price covers Average Variable Cost (AVC) at optimal output q*.",
+            "stageColor": "yellow",
+            "isDecisionPoint": true,
+            "decisionQuestion": "Is Market Price (P) >= minimum AVC?",
+            "yesBranch": "Continue producing in short run (Covers variable expenses).",
+            "noBranch": "Shut down operations immediately (Losses exceed fixed costs).",
+            "keyTakeaway": "Shutdown condition: If P < AVC, set output to zero in short run.",
+            "slideReference": "Slide 21"
+          },
+          {
+            "stepNumber": 4,
+            "title": "Check Profitability & ATC Threshold",
+            "description": "Compare market price against Average Total Cost (ATC) to determine whether operations yield positive profit or loss.",
+            "stageColor": "pink",
+            "isDecisionPoint": true,
+            "decisionQuestion": "Is Market Price (P) >= minimum ATC?",
+            "yesBranch": "Supernormal Profit: Firm earns positive economic profits (P - ATC) * q*.",
+            "noBranch": "Operate at a Loss: Revenue covers all VC and pays part of FC (Minimizes loss).",
+            "keyTakeaway": "Break-even price occurs exactly where P = min ATC.",
+            "slideReference": "Slide 24"
+          },
+          {
+            "stepNumber": 5,
+            "title": "Long-Run Market Equilibrium Adjustment",
+            "description": "Outside firms enter if profits > 0; unprofitable firms exit if losses persist, driving price to long-run equilibrium.",
+            "stageColor": "mint",
+            "keyTakeaway": "Long-run competitive equilibrium condition: P = MC = min ATC with zero economic profit.",
+            "slideReference": "Slide 32"
+          }
+        ]
+      },
+      "createdAt": "2026-11-15T09:25:49.401Z"
+    },
+    {
+      "id": "vn_eaa8c68a-b68e-412b-b397-c8ab8adb0662",
+      "fileId": "file_6b3c413b-43c5-4a8a-9f45-4f6590669bab",
+      "fileName": "Profit maximization and competitive supply.pptx",
+      "subjectId": "subj_cd8f99c7-4d7b-494b-9a54-026e4c9edc81",
+      "subjectName": "Microeconomics",
+      "format": "revisionsheet",
+      "title": "Profit maximization and competitive supply",
+      "subtitle": "Aesthetic MBA Visual Revision Sheet",
+      "summary": "Complete exam-ready revision sheet with formula cards, comparison tables, and memory cues.",
+      "slideCount": 63,
+      "coveragePercentage": 100,
+      "verifiedSlides": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "revisionSheetData": {
+        "sections": [
+          {
+            "id": "rev_1",
+            "category": "framework",
+            "title": "Profit Maximization Core Mechanism",
+            "color": "mint",
+            "content": "A competitive firm maximizes economic profit (TR - TC) by choosing output where Price equals Marginal Cost (P = MC). Because the firm is an individual price taker, marginal revenue is constant and equals price.",
+            "formula": "Profit = TR - TC  ==>  FOC: P = MR = MC (with rising MC)",
+            "memoryCue": "Remember: Price equals Marginal Cost, NOT Average Cost!",
+            "examTip": "Always verify that MC is upward sloping at the solution point.",
+            "slideReference": "Slides 7-10"
+          },
+          {
+            "id": "rev_2",
+            "category": "formula",
+            "title": "The Short-Run Shutdown vs Break-Even Rules",
+            "color": "yellow",
+            "content": "Fixed costs are sunk in the short run and must be paid regardless of output. Therefore, the firm continues operating as long as revenue covers variable costs.",
+            "formula": "Shutdown: P < min AVC | Break-Even: P = min ATC | Loss-Minimizing: min AVC <= P < min ATC",
+            "memoryCue": "Variable costs govern shutdown; Total costs govern profitability!",
+            "examTip": "In exam problems with Fixed Costs, do NOT include fixed costs when evaluating the shutdown decision.",
+            "slideReference": "Slides 19-25"
+          },
+          {
+            "id": "rev_3",
+            "category": "comparison",
+            "title": "Market Structures Comparison Matrix",
+            "color": "lavender",
+            "content": "How competitive markets contrast with imperfect market structures across pricing power and barriers to entry.",
+            "comparisonTable": {
+              "headers": [
+                "Market Structure",
+                "Firms",
+                "Product",
+                "Pricing Rule",
+                "Long-Run Profit"
+              ],
+              "rows": [
+                [
+                  "Perfect Competition",
+                  "Countless small",
+                  "Homogeneous",
+                  "P = MC (Price Taker)",
+                  "Zero Economic Profit"
+                ],
+                [
+                  "Monopolistic Competition",
+                  "Many",
+                  "Differentiated",
+                  "P > MC (Price Maker)",
+                  "Zero Economic Profit"
+                ],
+                [
+                  "Oligopoly",
+                  "Few dominant",
+                  "Standard or Differentiated",
+                  "Strategic / Game Theory",
+                  "Positive Economic Profit"
+                ],
+                [
+                  "Monopoly",
+                  "Single seller",
+                  "Unique (No substitutes)",
+                  "P >> MC (High Markup)",
+                  "High Economic Profit"
+                ]
+              ]
+            },
+            "slideReference": "Slides 11-17"
+          },
+          {
+            "id": "rev_4",
+            "category": "takeaway",
+            "title": "Producer Surplus vs Economic Profit",
+            "color": "pink",
+            "content": "Producer Surplus is total revenue minus total variable cost. It measures short-run operating cash gain before fixed costs are paid.",
+            "formula": "PS = TR - TVC = Profit + TFC",
+            "memoryCue": "Producer Surplus = Economic Profit + Total Fixed Cost!",
+            "examTip": "If Fixed Costs are positive, Producer Surplus is strictly greater than Economic Profit in the short run.",
+            "slideReference": "Slide 35"
+          }
+        ],
+        "keyFormulas": [
+          {
+            "formula": "P = MC",
+            "explanation": "Profit maximization condition for a price-taking competitive firm.",
+            "whenToUse": "To solve for optimal short-run and long-run production output quantity."
+          },
+          {
+            "formula": "P < AVC",
+            "explanation": "Short-run economic shutdown condition.",
+            "whenToUse": "To determine whether a loss-making firm should shut down immediately."
+          },
+          {
+            "formula": "PS = Profit + TFC",
+            "explanation": "Relationship between Producer Surplus and Economic Profit.",
+            "whenToUse": "To calculate welfare and producer gains from market supply curves."
+          }
+        ],
+        "examCheatSheet": [
+          "Competitive firm supply curve is the MC curve ABOVE minimum AVC.",
+          "In long-run equilibrium, P = MC = min ATC (zero economic profit).",
+          "Fixed costs are SUNK in the short run — ignore them when deciding whether to shut down.",
+          "Allocative efficiency occurs because P = MC (consumer valuation matches marginal cost)."
+        ]
+      },
+      "createdAt": "2026-11-15T09:25:49.410Z"
+    },
+    {
+      "id": "vn_f2cb2436-1630-48f7-b5da-61fddb6e3b7e",
+      "fileId": "file_6b3c413b-43c5-4a8a-9f45-4f6590669bab",
+      "fileName": "Profit maximization and competitive supply.pptx",
+      "subjectId": "subj_cd8f99c7-4d7b-494b-9a54-026e4c9edc81",
+      "subjectName": "Microeconomics",
+      "format": "mindmap",
+      "title": "Profit maximization and competitive supply",
+      "subtitle": "Microeconomics & Firm Output Decision Tree",
+      "summary": "Complete mind map of profit maximization (MR=MC), short-run shutdown rule, break-even conditions, and competitive supply curves.",
+      "slideCount": 63,
+      "coveragePercentage": 100,
+      "verifiedSlides": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "mindMapData": {
+        "root": {
+          "id": "root",
+          "label": "Profit Maximization & Competitive Supply",
+          "description": "Optimal output choice for price-taking competitive firms to maximize economic profit (TR - TC).",
+          "icon": "TrendingUp",
+          "color": "lavender",
+          "slideReference": "Slides 1-51",
+          "children": [
+            {
+              "id": "b1",
+              "label": "Universal Profit Maximization Rule",
+              "description": "First order condition MR = MC with rising MC curve. Price-takers face horizontal demand P = AR = MR.",
+              "icon": "Target",
+              "color": "mint",
+              "badge": "Core Law",
+              "slideReference": "Slides 7-10",
+              "children": [
+                {
+                  "id": "b1_1",
+                  "label": "First-Order Condition",
+                  "description": "d(Profit)/dq = MR - MC = 0 ==> MR = MC",
+                  "color": "mint",
+                  "slideReference": "Slide 8"
+                },
+                {
+                  "id": "b1_2",
+                  "label": "Competitive Firm Identity",
+                  "description": "Price taker ==> P = AR = MR ==> Condition becomes P = MC",
+                  "color": "mint",
+                  "slideReference": "Slide 9"
+                },
+                {
+                  "id": "b1_3",
+                  "label": "Second-Order Condition",
+                  "description": "MC curve must be rising (d2(Profit)/dq2 < 0) for true maximum",
+                  "color": "mint",
+                  "slideReference": "Slide 10"
+                }
+              ]
+            },
+            {
+              "id": "b2",
+              "label": "Short-Run Production Decisions",
+              "description": "Fixed costs (TFC) are sunk in the short run. Production viability is governed strictly by AVC.",
+              "icon": "AlertCircle",
+              "color": "pink",
+              "badge": "Crucial Rules",
+              "slideReference": "Slides 19-25",
+              "children": [
+                {
+                  "id": "b2_1",
+                  "label": "Supernormal Profit (P > ATC)",
+                  "description": "Firm earns positive economic profit (P - ATC) * Q",
+                  "color": "pink",
+                  "slideReference": "Slide 20"
+                },
+                {
+                  "id": "b2_2",
+                  "label": "Loss-Minimizing (AVC <= P < ATC)",
+                  "description": "Operate in short run! Revenue covers variable costs and partially pays TFC.",
+                  "color": "pink",
+                  "slideReference": "Slide 21"
+                },
+                {
+                  "id": "b2_3",
+                  "label": "Shutdown Rule (P < AVC)",
+                  "description": "Shut down immediately! Producing causes losses greater than fixed overhead.",
+                  "color": "pink",
+                  "slideReference": "Slide 22"
+                }
+              ]
+            },
+            {
+              "id": "b3",
+              "label": "Firm & Market Supply Curve",
+              "description": "Relationship between market price and quantity supplied.",
+              "icon": "Activity",
+              "color": "yellow",
+              "badge": "Supply Dynamics",
+              "slideReference": "Slides 26-30",
+              "children": [
+                {
+                  "id": "b3_1",
+                  "label": "Firm Supply Curve",
+                  "description": "The portion of Marginal Cost (MC) above minimum AVC",
+                  "color": "yellow",
+                  "slideReference": "Slide 26"
+                },
+                {
+                  "id": "b3_2",
+                  "label": "Market Supply Curve",
+                  "description": "Horizontal summation of individual firm supply curves",
+                  "color": "yellow",
+                  "slideReference": "Slide 27"
+                },
+                {
+                  "id": "b3_3",
+                  "label": "Break-Even Price",
+                  "description": "P = min ATC, where firm earns normal zero economic profit",
+                  "color": "yellow",
+                  "slideReference": "Slide 28"
+                }
+              ]
+            },
+            {
+              "id": "b4",
+              "label": "Long-Run Equilibrium & Welfare",
+              "description": "Free entry and exit drive market price to minimum efficient scale.",
+              "icon": "Award",
+              "color": "blue",
+              "badge": "Long-Run",
+              "slideReference": "Slides 31-45",
+              "children": [
+                {
+                  "id": "b4_1",
+                  "label": "Zero Economic Profit",
+                  "description": "P = MC = min ATC in long-run equilibrium",
+                  "color": "blue",
+                  "slideReference": "Slide 32"
+                },
+                {
+                  "id": "b4_2",
+                  "label": "Producer Surplus",
+                  "description": "PS = TR - TVC = Profit + TFC. Exceeds profit by fixed costs.",
+                  "color": "blue",
+                  "slideReference": "Slide 35"
+                },
+                {
+                  "id": "b4_3",
+                  "label": "Allocative Efficiency",
+                  "description": "P = MC means consumer valuation equals marginal production cost",
+                  "color": "blue",
+                  "slideReference": "Slide 40"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "createdAt": "2026-11-15T09:34:07.402Z"
+    },
+    {
+      "id": "vn_be755486-ad3f-4039-afe1-195745bdb84d",
+      "fileId": "file_6b3c413b-43c5-4a8a-9f45-4f6590669bab",
+      "fileName": "Profit maximization and competitive supply.pptx",
+      "subjectId": "subj_cd8f99c7-4d7b-494b-9a54-026e4c9edc81",
+      "subjectName": "Microeconomics",
+      "format": "infographic",
+      "title": "Profit maximization and competitive supply",
+      "subtitle": "Educational Infographic: The Mechanics of Competitive Output",
+      "summary": "Visual breakdown of profit maximization, shutdown thresholds, and market structure differences.",
+      "slideCount": 63,
+      "coveragePercentage": 100,
+      "verifiedSlides": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "infographicData": {
+        "keyStats": [
+          {
+            "label": "Universal Profit Rule",
+            "value": "MR = MC",
+            "icon": "Target"
+          },
+          {
+            "label": "Competitive Identity",
+            "value": "P = MC",
+            "icon": "Zap"
+          },
+          {
+            "label": "Shutdown Threshold",
+            "value": "P < min AVC",
+            "icon": "AlertTriangle"
+          },
+          {
+            "label": "Long-Run Profit",
+            "value": "Zero Economic",
+            "icon": "CheckCircle2"
+          }
+        ],
+        "sections": [
+          {
+            "id": "sec_1",
+            "title": "1. The Golden Rule of Profit Maximization",
+            "tagline": "How competitive firms optimize their production volume",
+            "color": "mint",
+            "items": [
+              {
+                "title": "Price-Taking Demand",
+                "text": "Because each competitive firm is small relative to the market, individual demand is perfectly elastic (horizontal) at market price.",
+                "formula": "P = AR = MR",
+                "icon": "ArrowRight",
+                "badge": "Assumption",
+                "slideReference": "Slide 7"
+              },
+              {
+                "title": "Profit Optimization",
+                "text": "To maximize profit, set output where price equals marginal cost. If MR > MC, increase output; if MR < MC, cut output.",
+                "formula": "P = MC (rising)",
+                "stat": "Max Profit",
+                "icon": "Check",
+                "badge": "Core Formula",
+                "slideReference": "Slide 8"
+              }
+            ]
+          },
+          {
+            "id": "sec_2",
+            "title": "2. The Short-Run Shutdown Decision Guide",
+            "tagline": "Why loss-making firms often keep their doors open",
+            "color": "yellow",
+            "items": [
+              {
+                "title": "Fixed Costs are Sunk",
+                "text": "In the short run, fixed expenses (rent, factory leases) must be paid even at zero output. They are ignored when deciding whether to shut down.",
+                "stat": "Sunk Costs",
+                "icon": "FileText",
+                "badge": "Managerial Rule",
+                "slideReference": "Slide 19"
+              },
+              {
+                "title": "The Operating Zone (AVC <= P < ATC)",
+                "text": "Revenue covers 100% of variable operating costs and contributes toward paying fixed overhead. Losses are smaller than shutting down!",
+                "formula": "Loss < TFC",
+                "icon": "TrendingDown",
+                "badge": "Loss Minimizing",
+                "slideReference": "Slide 21"
+              },
+              {
+                "title": "The Shutdown Boundary (P < AVC)",
+                "text": "Revenue fails to cover hourly wages and materials. Continuing to run accelerates losses beyond fixed costs.",
+                "formula": "P < AVC ==> Q = 0",
+                "stat": "SHUT DOWN",
+                "icon": "AlertOctagon",
+                "badge": "Critical Rule",
+                "slideReference": "Slide 22"
+              }
+            ]
+          },
+          {
+            "id": "sec_3",
+            "title": "3. Long-Run Equilibrium Dynamics",
+            "tagline": "How free entry and exit eliminate economic rents",
+            "color": "lavender",
+            "items": [
+              {
+                "title": "Free Entry & Exit Mechanism",
+                "text": "Positive profits attract outside firms, shifting market supply right and lowering price until economic profits drop to zero.",
+                "stat": "Zero Profit",
+                "icon": "RefreshCw",
+                "badge": "Market Force",
+                "slideReference": "Slide 31"
+              },
+              {
+                "title": "Triple Equality Condition",
+                "text": "In long-run competitive equilibrium, every surviving firm operates at the minimum of its Average Total Cost curve.",
+                "formula": "P = MC = min ATC",
+                "icon": "Award",
+                "badge": "Equilibrium",
+                "slideReference": "Slide 33"
+              }
+            ]
+          }
+        ]
+      },
+      "createdAt": "2026-11-15T09:34:07.410Z"
+    },
+    {
+      "id": "vn_e3451c88-acb6-4372-a347-c0cd6caa9277",
+      "fileId": "file_6b3c413b-43c5-4a8a-9f45-4f6590669bab",
+      "fileName": "Profit maximization and competitive supply.pptx",
+      "subjectId": "subj_cd8f99c7-4d7b-494b-9a54-026e4c9edc81",
+      "subjectName": "Microeconomics",
+      "format": "process",
+      "title": "Competitive Firm Output & Shutdown Decision Pipeline",
+      "subtitle": "Sequential managerial workflow to determine production volume and operating status",
+      "summary": "5-stage visual process guide from price observation to long-run industry equilibrium.",
+      "slideCount": 63,
+      "coveragePercentage": 100,
+      "verifiedSlides": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "processData": {
+        "title": "Competitive Output Decision Workflow",
+        "description": "Step-by-step decision framework for executive pricing and production choices.",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "title": "Observe Market Price (P)",
+            "description": "In perfect competition, the firm is an individual price taker. Market-wide supply and demand set equilibrium price P.",
+            "stageColor": "blue",
+            "keyTakeaway": "Individual firm faces horizontal demand where P = AR = MR.",
+            "slideReference": "Slide 5"
+          },
+          {
+            "stepNumber": 2,
+            "title": "Calculate Optimal Production Level (P = MC)",
+            "description": "Equate market price to Marginal Cost (MC = ΔTC / ΔQ) on the upward-sloping portion of the MC curve to locate target output q*.",
+            "stageColor": "lavender",
+            "keyTakeaway": "Produces where marginal revenue generated by last unit equals its marginal production cost.",
+            "slideReference": "Slide 8"
+          },
+          {
+            "stepNumber": 3,
+            "title": "Check Short-Run Shutdown Boundary",
+            "description": "Evaluate whether market price covers Average Variable Cost (AVC) at optimal output q*.",
+            "stageColor": "yellow",
+            "isDecisionPoint": true,
+            "decisionQuestion": "Is Market Price (P) >= minimum AVC?",
+            "yesBranch": "Continue producing in short run (Covers variable expenses).",
+            "noBranch": "Shut down operations immediately (Losses exceed fixed costs).",
+            "keyTakeaway": "Shutdown condition: If P < AVC, set output to zero in short run.",
+            "slideReference": "Slide 21"
+          },
+          {
+            "stepNumber": 4,
+            "title": "Check Profitability & ATC Threshold",
+            "description": "Compare market price against Average Total Cost (ATC) to determine whether operations yield positive profit or loss.",
+            "stageColor": "pink",
+            "isDecisionPoint": true,
+            "decisionQuestion": "Is Market Price (P) >= minimum ATC?",
+            "yesBranch": "Supernormal Profit: Firm earns positive economic profits (P - ATC) * q*.",
+            "noBranch": "Operate at a Loss: Revenue covers all VC and pays part of FC (Minimizes loss).",
+            "keyTakeaway": "Break-even price occurs exactly where P = min ATC.",
+            "slideReference": "Slide 24"
+          },
+          {
+            "stepNumber": 5,
+            "title": "Long-Run Market Equilibrium Adjustment",
+            "description": "Outside firms enter if profits > 0; unprofitable firms exit if losses persist, driving price to long-run equilibrium.",
+            "stageColor": "mint",
+            "keyTakeaway": "Long-run competitive equilibrium condition: P = MC = min ATC with zero economic profit.",
+            "slideReference": "Slide 32"
+          }
+        ]
+      },
+      "createdAt": "2026-11-15T09:34:07.410Z"
+    },
+    {
+      "id": "vn_91fd99fa-3135-46ff-933f-a65725bad15b",
+      "fileId": "file_6b3c413b-43c5-4a8a-9f45-4f6590669bab",
+      "fileName": "Profit maximization and competitive supply.pptx",
+      "subjectId": "subj_cd8f99c7-4d7b-494b-9a54-026e4c9edc81",
+      "subjectName": "Microeconomics",
+      "format": "revisionsheet",
+      "title": "Profit maximization and competitive supply",
+      "subtitle": "Aesthetic MBA Visual Revision Sheet",
+      "summary": "Complete exam-ready revision sheet with formula cards, comparison tables, and memory cues.",
+      "slideCount": 63,
+      "coveragePercentage": 100,
+      "verifiedSlides": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "revisionSheetData": {
+        "sections": [
+          {
+            "id": "rev_1",
+            "category": "framework",
+            "title": "Profit Maximization Core Mechanism",
+            "color": "mint",
+            "content": "A competitive firm maximizes economic profit (TR - TC) by choosing output where Price equals Marginal Cost (P = MC). Because the firm is an individual price taker, marginal revenue is constant and equals price.",
+            "formula": "Profit = TR - TC  ==>  FOC: P = MR = MC (with rising MC)",
+            "memoryCue": "Remember: Price equals Marginal Cost, NOT Average Cost!",
+            "examTip": "Always verify that MC is upward sloping at the solution point.",
+            "slideReference": "Slides 7-10"
+          },
+          {
+            "id": "rev_2",
+            "category": "formula",
+            "title": "The Short-Run Shutdown vs Break-Even Rules",
+            "color": "yellow",
+            "content": "Fixed costs are sunk in the short run and must be paid regardless of output. Therefore, the firm continues operating as long as revenue covers variable costs.",
+            "formula": "Shutdown: P < min AVC | Break-Even: P = min ATC | Loss-Minimizing: min AVC <= P < min ATC",
+            "memoryCue": "Variable costs govern shutdown; Total costs govern profitability!",
+            "examTip": "In exam problems with Fixed Costs, do NOT include fixed costs when evaluating the shutdown decision.",
+            "slideReference": "Slides 19-25"
+          },
+          {
+            "id": "rev_3",
+            "category": "comparison",
+            "title": "Market Structures Comparison Matrix",
+            "color": "lavender",
+            "content": "How competitive markets contrast with imperfect market structures across pricing power and barriers to entry.",
+            "comparisonTable": {
+              "headers": [
+                "Market Structure",
+                "Firms",
+                "Product",
+                "Pricing Rule",
+                "Long-Run Profit"
+              ],
+              "rows": [
+                [
+                  "Perfect Competition",
+                  "Countless small",
+                  "Homogeneous",
+                  "P = MC (Price Taker)",
+                  "Zero Economic Profit"
+                ],
+                [
+                  "Monopolistic Competition",
+                  "Many",
+                  "Differentiated",
+                  "P > MC (Price Maker)",
+                  "Zero Economic Profit"
+                ],
+                [
+                  "Oligopoly",
+                  "Few dominant",
+                  "Standard or Differentiated",
+                  "Strategic / Game Theory",
+                  "Positive Economic Profit"
+                ],
+                [
+                  "Monopoly",
+                  "Single seller",
+                  "Unique (No substitutes)",
+                  "P >> MC (High Markup)",
+                  "High Economic Profit"
+                ]
+              ]
+            },
+            "slideReference": "Slides 11-17"
+          },
+          {
+            "id": "rev_4",
+            "category": "takeaway",
+            "title": "Producer Surplus vs Economic Profit",
+            "color": "pink",
+            "content": "Producer Surplus is total revenue minus total variable cost. It measures short-run operating cash gain before fixed costs are paid.",
+            "formula": "PS = TR - TVC = Profit + TFC",
+            "memoryCue": "Producer Surplus = Economic Profit + Total Fixed Cost!",
+            "examTip": "If Fixed Costs are positive, Producer Surplus is strictly greater than Economic Profit in the short run.",
+            "slideReference": "Slide 35"
+          }
+        ],
+        "keyFormulas": [
+          {
+            "formula": "P = MC",
+            "explanation": "Profit maximization condition for a price-taking competitive firm.",
+            "whenToUse": "To solve for optimal short-run and long-run production output quantity."
+          },
+          {
+            "formula": "P < AVC",
+            "explanation": "Short-run economic shutdown condition.",
+            "whenToUse": "To determine whether a loss-making firm should shut down immediately."
+          },
+          {
+            "formula": "PS = Profit + TFC",
+            "explanation": "Relationship between Producer Surplus and Economic Profit.",
+            "whenToUse": "To calculate welfare and producer gains from market supply curves."
+          }
+        ],
+        "examCheatSheet": [
+          "Competitive firm supply curve is the MC curve ABOVE minimum AVC.",
+          "In long-run equilibrium, P = MC = min ATC (zero economic profit).",
+          "Fixed costs are SUNK in the short run — ignore them when deciding whether to shut down.",
+          "Allocative efficiency occurs because P = MC (consumer valuation matches marginal cost)."
+        ]
+      },
+      "createdAt": "2026-11-15T09:34:07.411Z"
+    },
+    {
+      "id": "vn_ed4a5ae9-da20-4649-9f73-d7e49d79d4d1",
+      "fileId": "file_6b3c413b-43c5-4a8a-9f45-4f6590669bab",
+      "fileName": "Profit maximization and competitive supply.pptx",
+      "subjectId": "subj_cd8f99c7-4d7b-494b-9a54-026e4c9edc81",
+      "subjectName": "Microeconomics",
+      "format": "process",
+      "title": "Competitive Firm Output & Shutdown Decision Pipeline",
+      "subtitle": "Sequential managerial workflow to determine production volume and operating status",
+      "summary": "5-stage visual process guide from price observation to long-run industry equilibrium.",
+      "slideCount": 63,
+      "coveragePercentage": 100,
+      "verifiedSlides": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "processData": {
+        "title": "Competitive Output Decision Workflow",
+        "description": "Step-by-step decision framework for executive pricing and production choices.",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "title": "Observe Market Price (P)",
+            "description": "In perfect competition, the firm is an individual price taker. Market-wide supply and demand set equilibrium price P.",
+            "stageColor": "blue",
+            "keyTakeaway": "Individual firm faces horizontal demand where P = AR = MR.",
+            "slideReference": "Slide 5"
+          },
+          {
+            "stepNumber": 2,
+            "title": "Calculate Optimal Production Level (P = MC)",
+            "description": "Equate market price to Marginal Cost (MC = ΔTC / ΔQ) on the upward-sloping portion of the MC curve to locate target output q*.",
+            "stageColor": "lavender",
+            "keyTakeaway": "Produces where marginal revenue generated by last unit equals its marginal production cost.",
+            "slideReference": "Slide 8"
+          },
+          {
+            "stepNumber": 3,
+            "title": "Check Short-Run Shutdown Boundary",
+            "description": "Evaluate whether market price covers Average Variable Cost (AVC) at optimal output q*.",
+            "stageColor": "yellow",
+            "isDecisionPoint": true,
+            "decisionQuestion": "Is Market Price (P) >= minimum AVC?",
+            "yesBranch": "Continue producing in short run (Covers variable expenses).",
+            "noBranch": "Shut down operations immediately (Losses exceed fixed costs).",
+            "keyTakeaway": "Shutdown condition: If P < AVC, set output to zero in short run.",
+            "slideReference": "Slide 21"
+          },
+          {
+            "stepNumber": 4,
+            "title": "Check Profitability & ATC Threshold",
+            "description": "Compare market price against Average Total Cost (ATC) to determine whether operations yield positive profit or loss.",
+            "stageColor": "pink",
+            "isDecisionPoint": true,
+            "decisionQuestion": "Is Market Price (P) >= minimum ATC?",
+            "yesBranch": "Supernormal Profit: Firm earns positive economic profits (P - ATC) * q*.",
+            "noBranch": "Operate at a Loss: Revenue covers all VC and pays part of FC (Minimizes loss).",
+            "keyTakeaway": "Break-even price occurs exactly where P = min ATC.",
+            "slideReference": "Slide 24"
+          },
+          {
+            "stepNumber": 5,
+            "title": "Long-Run Market Equilibrium Adjustment",
+            "description": "Outside firms enter if profits > 0; unprofitable firms exit if losses persist, driving price to long-run equilibrium.",
+            "stageColor": "mint",
+            "keyTakeaway": "Long-run competitive equilibrium condition: P = MC = min ATC with zero economic profit.",
+            "slideReference": "Slide 32"
+          }
+        ]
+      },
+      "createdAt": "2026-11-15T09:34:37.582Z"
+    },
+    {
+      "id": "vn_a77d41e2-5c69-45db-8d6e-f91b481d3fb6",
+      "fileId": "file_6b3c413b-43c5-4a8a-9f45-4f6590669bab",
+      "fileName": "Profit maximization and competitive supply.pptx",
+      "subjectId": "subj_cd8f99c7-4d7b-494b-9a54-026e4c9edc81",
+      "subjectName": "Microeconomics",
+      "format": "revisionsheet",
+      "title": "Profit maximization and competitive supply",
+      "subtitle": "Aesthetic MBA Visual Revision Sheet",
+      "summary": "Complete exam-ready revision sheet with formula cards, comparison tables, and memory cues.",
+      "slideCount": 63,
+      "coveragePercentage": 100,
+      "verifiedSlides": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "revisionSheetData": {
+        "sections": [
+          {
+            "id": "rev_1",
+            "category": "framework",
+            "title": "Profit Maximization Core Mechanism",
+            "color": "mint",
+            "content": "A competitive firm maximizes economic profit (TR - TC) by choosing output where Price equals Marginal Cost (P = MC). Because the firm is an individual price taker, marginal revenue is constant and equals price.",
+            "formula": "Profit = TR - TC  ==>  FOC: P = MR = MC (with rising MC)",
+            "memoryCue": "Remember: Price equals Marginal Cost, NOT Average Cost!",
+            "examTip": "Always verify that MC is upward sloping at the solution point.",
+            "slideReference": "Slides 7-10"
+          },
+          {
+            "id": "rev_2",
+            "category": "formula",
+            "title": "The Short-Run Shutdown vs Break-Even Rules",
+            "color": "yellow",
+            "content": "Fixed costs are sunk in the short run and must be paid regardless of output. Therefore, the firm continues operating as long as revenue covers variable costs.",
+            "formula": "Shutdown: P < min AVC | Break-Even: P = min ATC | Loss-Minimizing: min AVC <= P < min ATC",
+            "memoryCue": "Variable costs govern shutdown; Total costs govern profitability!",
+            "examTip": "In exam problems with Fixed Costs, do NOT include fixed costs when evaluating the shutdown decision.",
+            "slideReference": "Slides 19-25"
+          },
+          {
+            "id": "rev_3",
+            "category": "comparison",
+            "title": "Market Structures Comparison Matrix",
+            "color": "lavender",
+            "content": "How competitive markets contrast with imperfect market structures across pricing power and barriers to entry.",
+            "comparisonTable": {
+              "headers": [
+                "Market Structure",
+                "Firms",
+                "Product",
+                "Pricing Rule",
+                "Long-Run Profit"
+              ],
+              "rows": [
+                [
+                  "Perfect Competition",
+                  "Countless small",
+                  "Homogeneous",
+                  "P = MC (Price Taker)",
+                  "Zero Economic Profit"
+                ],
+                [
+                  "Monopolistic Competition",
+                  "Many",
+                  "Differentiated",
+                  "P > MC (Price Maker)",
+                  "Zero Economic Profit"
+                ],
+                [
+                  "Oligopoly",
+                  "Few dominant",
+                  "Standard or Differentiated",
+                  "Strategic / Game Theory",
+                  "Positive Economic Profit"
+                ],
+                [
+                  "Monopoly",
+                  "Single seller",
+                  "Unique (No substitutes)",
+                  "P >> MC (High Markup)",
+                  "High Economic Profit"
+                ]
+              ]
+            },
+            "slideReference": "Slides 11-17"
+          },
+          {
+            "id": "rev_4",
+            "category": "takeaway",
+            "title": "Producer Surplus vs Economic Profit",
+            "color": "pink",
+            "content": "Producer Surplus is total revenue minus total variable cost. It measures short-run operating cash gain before fixed costs are paid.",
+            "formula": "PS = TR - TVC = Profit + TFC",
+            "memoryCue": "Producer Surplus = Economic Profit + Total Fixed Cost!",
+            "examTip": "If Fixed Costs are positive, Producer Surplus is strictly greater than Economic Profit in the short run.",
+            "slideReference": "Slide 35"
+          }
+        ],
+        "keyFormulas": [
+          {
+            "formula": "P = MC",
+            "explanation": "Profit maximization condition for a price-taking competitive firm.",
+            "whenToUse": "To solve for optimal short-run and long-run production output quantity."
+          },
+          {
+            "formula": "P < AVC",
+            "explanation": "Short-run economic shutdown condition.",
+            "whenToUse": "To determine whether a loss-making firm should shut down immediately."
+          },
+          {
+            "formula": "PS = Profit + TFC",
+            "explanation": "Relationship between Producer Surplus and Economic Profit.",
+            "whenToUse": "To calculate welfare and producer gains from market supply curves."
+          }
+        ],
+        "examCheatSheet": [
+          "Competitive firm supply curve is the MC curve ABOVE minimum AVC.",
+          "In long-run equilibrium, P = MC = min ATC (zero economic profit).",
+          "Fixed costs are SUNK in the short run — ignore them when deciding whether to shut down.",
+          "Allocative efficiency occurs because P = MC (consumer valuation matches marginal cost)."
+        ]
+      },
+      "createdAt": "2026-11-15T09:34:37.591Z"
+    },
+    {
+      "id": "vn_9c6388b2-10da-44f3-95e7-e8bafbdc973e",
+      "fileId": "file_6b3c413b-43c5-4a8a-9f45-4f6590669bab",
+      "fileName": "Profit maximization and competitive supply.pptx",
+      "subjectId": "subj_cd8f99c7-4d7b-494b-9a54-026e4c9edc81",
+      "subjectName": "Microeconomics",
+      "format": "revisionsheet",
+      "title": "Profit maximization and competitive supply",
+      "subtitle": "Aesthetic MBA Visual Revision Sheet",
+      "summary": "Complete exam-ready revision sheet with formula cards, comparison tables, and memory cues.",
+      "slideCount": 63,
+      "coveragePercentage": 100,
+      "verifiedSlides": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "revisionSheetData": {
+        "sections": [
+          {
+            "id": "rev_1",
+            "category": "framework",
+            "title": "Profit Maximization Core Mechanism",
+            "color": "mint",
+            "content": "A competitive firm maximizes economic profit (TR - TC) by choosing output where Price equals Marginal Cost (P = MC). Because the firm is an individual price taker, marginal revenue is constant and equals price.",
+            "formula": "Profit = TR - TC  ==>  FOC: P = MR = MC (with rising MC)",
+            "memoryCue": "Remember: Price equals Marginal Cost, NOT Average Cost!",
+            "examTip": "Always verify that MC is upward sloping at the solution point.",
+            "slideReference": "Slides 7-10"
+          },
+          {
+            "id": "rev_2",
+            "category": "formula",
+            "title": "The Short-Run Shutdown vs Break-Even Rules",
+            "color": "yellow",
+            "content": "Fixed costs are sunk in the short run and must be paid regardless of output. Therefore, the firm continues operating as long as revenue covers variable costs.",
+            "formula": "Shutdown: P < min AVC | Break-Even: P = min ATC | Loss-Minimizing: min AVC <= P < min ATC",
+            "memoryCue": "Variable costs govern shutdown; Total costs govern profitability!",
+            "examTip": "In exam problems with Fixed Costs, do NOT include fixed costs when evaluating the shutdown decision.",
+            "slideReference": "Slides 19-25"
+          },
+          {
+            "id": "rev_3",
+            "category": "comparison",
+            "title": "Market Structures Comparison Matrix",
+            "color": "lavender",
+            "content": "How competitive markets contrast with imperfect market structures across pricing power and barriers to entry.",
+            "comparisonTable": {
+              "headers": [
+                "Market Structure",
+                "Firms",
+                "Product",
+                "Pricing Rule",
+                "Long-Run Profit"
+              ],
+              "rows": [
+                [
+                  "Perfect Competition",
+                  "Countless small",
+                  "Homogeneous",
+                  "P = MC (Price Taker)",
+                  "Zero Economic Profit"
+                ],
+                [
+                  "Monopolistic Competition",
+                  "Many",
+                  "Differentiated",
+                  "P > MC (Price Maker)",
+                  "Zero Economic Profit"
+                ],
+                [
+                  "Oligopoly",
+                  "Few dominant",
+                  "Standard or Differentiated",
+                  "Strategic / Game Theory",
+                  "Positive Economic Profit"
+                ],
+                [
+                  "Monopoly",
+                  "Single seller",
+                  "Unique (No substitutes)",
+                  "P >> MC (High Markup)",
+                  "High Economic Profit"
+                ]
+              ]
+            },
+            "slideReference": "Slides 11-17"
+          },
+          {
+            "id": "rev_4",
+            "category": "takeaway",
+            "title": "Producer Surplus vs Economic Profit",
+            "color": "pink",
+            "content": "Producer Surplus is total revenue minus total variable cost. It measures short-run operating cash gain before fixed costs are paid.",
+            "formula": "PS = TR - TVC = Profit + TFC",
+            "memoryCue": "Producer Surplus = Economic Profit + Total Fixed Cost!",
+            "examTip": "If Fixed Costs are positive, Producer Surplus is strictly greater than Economic Profit in the short run.",
+            "slideReference": "Slide 35"
+          }
+        ],
+        "keyFormulas": [
+          {
+            "formula": "P = MC",
+            "explanation": "Profit maximization condition for a price-taking competitive firm.",
+            "whenToUse": "To solve for optimal short-run and long-run production output quantity."
+          },
+          {
+            "formula": "P < AVC",
+            "explanation": "Short-run economic shutdown condition.",
+            "whenToUse": "To determine whether a loss-making firm should shut down immediately."
+          },
+          {
+            "formula": "PS = Profit + TFC",
+            "explanation": "Relationship between Producer Surplus and Economic Profit.",
+            "whenToUse": "To calculate welfare and producer gains from market supply curves."
+          }
+        ],
+        "examCheatSheet": [
+          "Competitive firm supply curve is the MC curve ABOVE minimum AVC.",
+          "In long-run equilibrium, P = MC = min ATC (zero economic profit).",
+          "Fixed costs are SUNK in the short run — ignore them when deciding whether to shut down.",
+          "Allocative efficiency occurs because P = MC (consumer valuation matches marginal cost)."
+        ]
+      },
+      "createdAt": "2026-11-15T09:35:03.910Z"
+    }
   ]
 }

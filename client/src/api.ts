@@ -224,5 +224,16 @@ export const api = {
   getEscapeRoomHistory: (subjectId?: string) =>
     fetchJson<import('./types').EscapeRoomResult[]>(
       `/escape-room/history${subjectId ? `?subjectId=${subjectId}` : ''}`
+    ),
+
+  // ✨ One-Click Visual Notes
+  generateVisualNotes: (data: { fileId: string; format: import('./types').VisualFormat }) =>
+    fetchJson<import('./types').VisualNote>('/ai/visual-notes/generate', {
+      method: 'POST',
+      body: JSON.stringify(data)
+    }),
+  getVisualNote: (fileId: string, format?: import('./types').VisualFormat) =>
+    fetchJson<import('./types').VisualNote | null>(
+      `/ai/visual-notes/${fileId}${format ? `?format=${format}` : ''}`
     )
 };

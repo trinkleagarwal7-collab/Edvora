@@ -2,6 +2,7 @@ import express from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import { store } from '../db/store.js';
 import { AiService } from '../services/aiService.js';
+import { VisualNotesService } from '../services/visualNotesService.js';
 
 const router = express.Router();
 
@@ -169,6 +170,34 @@ router.delete('/notes/:id', async (req, res) => {
     const { id } = req.params;
     await store.delete('notes', id);
     res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// POST generate visual notes (Mind Map, Infographic, Process Diagram, Visual Revision Sheet)
+router.post('/visual-notes/generate', async (req, res) => {
+  try {
+    const { fileId, format = 'mindmap' } = req.body;
+    if (!fileId) {
+      return res.status(400).json({ error: 'fileId is required to generate visual notes.' });
+    }
+
+    const note = await VisualNotesService.generateVisualNotes({ fileId, format });
+    res.status(201).json(note);
+  } catch (err) {
+    console.error('[VisualNotes] Generation error:', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// GET previously generated visual notes for a file
+router.get('/visual-notes/:fileId', (req, res) => {
+  try {
+    const { fileId } = req.params;
+    const { format } = req.query;
+    const note = VisualNotesService.getVisualNotes(fileId, format || null);
+    res.json(note || null);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
